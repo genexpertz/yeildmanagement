@@ -1,5 +1,7 @@
 package com.expertzlab.yieldmanagement.fileutil;
 
+import com.expertzlab.yieldmanagement.models.Owner;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -33,15 +35,15 @@ public class LoadSampleData {
         if(header != null) {
             array = header.split("|");
         }
-        Participant pt = null;
+        Owner pt = null;
         String record = null;
         while(( record = readData()) != null) {
 
             //split record
-            if (clazz.getName().equals("Participant")) {
+            if (clazz.getName().equals("Owner")) {
 
                 Class<?> loadedClass = Class.forName(clazz.getName());
-                pt = (Participant) loadedClass.newInstance();
+                pt = (Owner) loadedClass.newInstance();
             }
 
             //pt.setName();

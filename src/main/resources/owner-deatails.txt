@@ -1,0 +1,3 @@
+name|address|contact
+senil|thrissur|9746803980
+prasad|palakad|8714260519
