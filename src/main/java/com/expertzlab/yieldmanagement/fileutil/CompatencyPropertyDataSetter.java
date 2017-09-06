@@ -1,33 +1,34 @@
 package com.expertzlab.yieldmanagement.fileutil;
 
-import com.expertzlab.yieldmanagement.models.Owner;
+import com.expertzlab.yieldmanagement.models.Availability;
+import com.expertzlab.yieldmanagement.models.CompatencyProperty;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
 /**
- * Created by expertzlab on 8/11/17.
+ * Created by expertzlab on 9/6/17.
  */
-public class OwnerDataSetter extends DataSetter {
+public class CompatencyPropertyDataSetter extends DataSetter {
     Class clazz;
     String[] hArray;
     String[] rArray;
 
-    OwnerDataSetter(Class clazz, String[] hArray, String[] rArray) {
+    CompatencyPropertyDataSetter(Class clazz, String[] hArray, String[] rArray) {
         this.clazz =clazz;
         this.hArray = hArray;
         this.rArray = rArray;
     }
-    public Owner run() {
-        Owner own =null;
+    public CompatencyProperty run() {
+        CompatencyProperty com =null;
         Class<?> loadedClass = null;
         try {
             loadedClass = Class.forName(clazz.getName());
-            own = (Owner) loadedClass.newInstance();
+            com = (Availability) loadedClass.newInstance();
             for(int i = 0; i< hArray.length; i++) {
 
                 Method m = clazz.getMethod("set" +capitalizeFirstLetter( hArray[i]), String.class);
-                m.invoke(own, rArray[i]);
+                m.invoke(com, rArray[i]);
             }
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
@@ -40,7 +41,7 @@ public class OwnerDataSetter extends DataSetter {
         } catch (NoSuchMethodException e) {
             e.printStackTrace();
         }
-        return own;
+        return com;
     }
 
     public String capitalizeFirstLetter(String str){
