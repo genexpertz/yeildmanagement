@@ -1,6 +1,7 @@
 package com.expertzlab.yieldmanagement.fileutil;
 
-import com.expertzlab.yieldmanagement.models.Owner;
+import com.expertzlab.yieldmanagement.models.CompatencyProperty;
+import com.expertzlab.yieldmanagement.models.OwnerProperty;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -11,12 +12,12 @@ import java.util.List;
  * Created by expertzlab on 9/6/17.
  */
 
-public class AvailabilityDataWriter extends Thread{
+public class OwnerPropertyDataWriter extends Thread{
     Connection con;
     List<Object> list;
 
 
-    public AvailabilityDataWriter(Connection con, List<Object> list)
+    public OwnerPropertyDataWriter(Connection con, List<Object> list)
     {
         this.con = con;
         this.list = list;
@@ -26,14 +27,16 @@ public class AvailabilityDataWriter extends Thread{
     {
 
         try {
-            CompatencyPropertyRandomizer ar = new CompatencyPropertyRandomizer(con);
+            OwnerPropertyRandomizer ar = new OwnerPropertyRandomizer(con);
             list = ar.getRandomizedList(list);
-            for(Object ava :list) {
-                System.out.println("Availability -"+ava);
+            for(Object op :list) {
+                System.out.println("OwnerProperty-"+op);
                 System.out.println("In new thread");
-                PreparedStatement statement = con.prepareStatement("insert into agent values(?,?) ");
-                statement.setLong(1,((Owner)ava).getId());
-                statement.setString(2,((Owner)ava).getName());
+                PreparedStatement statement = con.prepareStatement("insert into OwnerProperty  values(?,?) ");
+                statement.setLong(1,((OwnerProperty)op).getPropertyID());
+                statement.setString(2,((OwnerProperty)op).getRegion());
+                statement.setString(3,((OwnerProperty)op).getUrl());
+                //statement.setFloat(4,((OwnerProperty)op).getPrice());
                 //statement.setLong(3,((Agent)agt).getProjectId());
                 statement.execute();
                 System.out.println("Executed successfully");

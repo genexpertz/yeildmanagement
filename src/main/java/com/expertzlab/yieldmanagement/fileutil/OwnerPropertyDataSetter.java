@@ -1,6 +1,7 @@
 package com.expertzlab.yieldmanagement.fileutil;
 
 import com.expertzlab.yieldmanagement.models.Availability;
+import com.expertzlab.yieldmanagement.models.OwnerProperty;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -8,27 +9,27 @@ import java.lang.reflect.Method;
 /**
  * Created by expertzlab on 9/6/17.
  */
-
-public class AvailabilityDataSetter extends DataSetter {
+public abstract class OwnerPropertyDataSetter extends DataSetter {
     Class clazz;
     String[] hArray;
     String[] rArray;
 
-    AvailabilityDataSetter(Class clazz, String[] hArray, String[] rArray) {
+    OwnerPropertyDataSetter(Class clazz, String[] hArray, String[] rArray) {
         this.clazz =clazz;
         this.hArray = hArray;
         this.rArray = rArray;
     }
-    public Availability run() {
-        Availability ava =null;
+    public OwnerProperty run() {
+
+        OwnerProperty op =null;
         Class<?> loadedClass = null;
         try {
             loadedClass = Class.forName(clazz.getName());
-            ava = (Availability) loadedClass.newInstance();
+            op = (OwnerProperty) loadedClass.newInstance();
             for(int i = 0; i< hArray.length; i++) {
 
                 Method m = clazz.getMethod("set" +capitalizeFirstLetter( hArray[i]), String.class);
-                m.invoke(ava, rArray[i]);
+                m.invoke(op, rArray[i]);
             }
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
@@ -41,7 +42,7 @@ public class AvailabilityDataSetter extends DataSetter {
         } catch (NoSuchMethodException e) {
             e.printStackTrace();
         }
-        return ava;
+        return op;
     }
 
     public String capitalizeFirstLetter(String str){

@@ -1,34 +1,33 @@
 package com.expertzlab.yieldmanagement.fileutil;
 
-import com.expertzlab.yieldmanagement.models.Availability;
+import com.expertzlab.yieldmanagement.models.Price;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
 /**
- * Created by expertzlab on 9/6/17.
+ * Created by expertzlab on 8/11/17.
  */
-
-public class AvailabilityDataSetter extends DataSetter {
+public class PriceDataSetter extends DataSetter {
     Class clazz;
     String[] hArray;
     String[] rArray;
 
-    AvailabilityDataSetter(Class clazz, String[] hArray, String[] rArray) {
+    PriceDataSetter(Class clazz, String[] hArray, String[] rArray) {
         this.clazz =clazz;
         this.hArray = hArray;
         this.rArray = rArray;
     }
-    public Availability run() {
-        Availability ava =null;
+    public Price run() {
+        Price pri =null;
         Class<?> loadedClass = null;
         try {
             loadedClass = Class.forName(clazz.getName());
-            ava = (Availability) loadedClass.newInstance();
+            pri = (Price) loadedClass.newInstance();
             for(int i = 0; i< hArray.length; i++) {
 
                 Method m = clazz.getMethod("set" +capitalizeFirstLetter( hArray[i]), String.class);
-                m.invoke(ava, rArray[i]);
+                m.invoke(pri, rArray[i]);
             }
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
@@ -41,7 +40,7 @@ public class AvailabilityDataSetter extends DataSetter {
         } catch (NoSuchMethodException e) {
             e.printStackTrace();
         }
-        return ava;
+        return pri;
     }
 
     public String capitalizeFirstLetter(String str){

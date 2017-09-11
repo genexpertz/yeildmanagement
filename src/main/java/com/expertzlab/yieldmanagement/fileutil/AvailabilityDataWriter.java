@@ -1,8 +1,9 @@
 package com.expertzlab.yieldmanagement.fileutil;
 
-import com.expertzlab.yieldmanagement.models.Owner;
+import com.expertzlab.yieldmanagement.models.Availability;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.List;
@@ -31,11 +32,12 @@ public class AvailabilityDataWriter extends Thread{
             for(Object ava :list) {
                 System.out.println("Availability -"+ava);
                 System.out.println("In new thread");
-                PreparedStatement statement = con.prepareStatement("insert into agent values(?,?) ");
-                statement.setLong(1,((Owner)ava).getId());
-                statement.setString(2,((Owner)ava).getName());
+                PreparedStatement statement = con.prepareStatement("insert into Availability values(?,?) ");
+                statement.setDate(1, (Date) ((Availability)ava).getDate());
+                statement.setString(2,((Availability)ava).getRegion());
                 //statement.setLong(3,((Agent)agt).getProjectId());
                 statement.execute();
+
                 System.out.println("Executed successfully");
             }
         } catch (SQLException e) {

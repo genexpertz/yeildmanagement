@@ -21,7 +21,7 @@ public class Availability {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(long date) {
         this.date = date;
     }
 }

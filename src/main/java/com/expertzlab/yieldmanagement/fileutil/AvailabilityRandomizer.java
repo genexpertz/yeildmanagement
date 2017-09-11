@@ -1,12 +1,13 @@
 package com.expertzlab.yieldmanagement.fileutil;
 
-import com.expertzlab.yieldmanagement.models.Owner;
+import com.expertzlab.yieldmanagement.models.Availability;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Random;
 
@@ -22,7 +23,7 @@ public class AvailabilityRandomizer {
 
     public AvailabilityRandomizer(Connection con ) throws SQLException {
         Statement stmt = con.createStatement();
-        ResultSet res = stmt.executeQuery("Select max(id) from Owner");
+        ResultSet res = stmt.executeQuery("Select max(id) from Availability");
         while (res.next()){
             lastId = res.getLong(1);
         }
@@ -34,12 +35,12 @@ public class AvailabilityRandomizer {
 
             Random r = new Random();
             pos1 = r.nextInt(list.size());
-            Owner p1 = (Owner) list.get(pos1);
+            Availability p1 = (Availability) list.get(pos1);
             pos2 = r.nextInt(list.size());
-            Owner p2 = (Owner) list.get(pos2);
-            Owner p3 = new Owner();
-            p3.setId(i);
-            p3.setName(p1.getName() + " " + p2.getName() + pos1);
+            Availability p2 = (Availability) list.get(pos2);
+            Availability p3 = new Availability();
+            p3.setDate(i);
+            p3.setRegion(p1.getRegion() + " " + p2.getRegion() + pos1);
             // p3.setProjectId(pos1 > pos2 ? p1.getProjectId() : p2.getProjectId());
             l1.add(p3);
         }

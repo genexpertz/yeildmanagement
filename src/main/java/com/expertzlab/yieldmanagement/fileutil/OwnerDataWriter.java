@@ -28,12 +28,14 @@ public class OwnerDataWriter extends Thread{
         try {
             CompatencyPropertyRandomizer ar = new CompatencyPropertyRandomizer(con);
             list = ar.getRandomizedList(list);
-            for(Object agt :list) {
-                System.out.println("Owner -"+agt);
+            for(Object own :list) {
+                System.out.println("Owner -"+own);
                 System.out.println("In new thread");
                 PreparedStatement statement = con.prepareStatement("insert into agent values(?,?) ");
-                statement.setLong(1,((Owner)agt).getId());
-                statement.setString(2,((Owner)agt).getName());
+                statement.setLong(1,((Owner)own).getId());
+                statement.setString(2,((Owner)own).getName());
+                statement.setString(3,((Owner)own).getContact());
+                statement.setString(4,((Owner)own).getAddress());
                 //statement.setLong(3,((Agent)agt).getProjectId());
                 statement.execute();
                 System.out.println("Executed successfully");

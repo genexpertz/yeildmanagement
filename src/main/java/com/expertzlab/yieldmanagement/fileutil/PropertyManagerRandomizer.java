@@ -13,17 +13,16 @@ import java.util.Random;
 /**
  * Created by expertzlab on 9/6/17.
  */
-
-public class AvailabilityRandomizer {
+public class PropertyManagerRandomizer {
     int pos1;
     int pos2;
 
     int recordcount =100;
     long lastId = 0;
 
-    public AvailabilityRandomizer(Connection con ) throws SQLException {
+    public PropertyManagerRandomizer(Connection con ) throws SQLException {
         Statement stmt = con.createStatement();
-        ResultSet res = stmt.executeQuery("Select max(id) from Owner");
+        ResultSet res = stmt.executeQuery("Select max(id) from agent");
         while (res.next()){
             lastId = res.getLong(1);
         }
