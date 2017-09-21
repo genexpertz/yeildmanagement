@@ -3,10 +3,10 @@ package com.expertzlab.yieldmanagement.models;
 /**
  * Created by expertzlab on 8/11/17.
  */
-public class CompatencyProperty {
+public class CompetantProperty {
     int id;
     String region;
-    String url;
+    String name;
     Float price;
 
     public int getId() {
@@ -25,12 +25,12 @@ public class CompatencyProperty {
         this.region = region;
     }
 
-    public String getUrl() {
-        return url;
+    public String getName() {
+        return name;
     }
 
-    public void setUrl(String url) {
-        this.url = url;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public Float getPrice() {

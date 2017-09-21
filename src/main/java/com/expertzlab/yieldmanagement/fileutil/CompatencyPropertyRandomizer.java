@@ -1,6 +1,6 @@
 package com.expertzlab.yieldmanagement.fileutil;
 
-import com.expertzlab.yieldmanagement.models.CompatencyProperty;
+import com.expertzlab.yieldmanagement.models.CompetantProperty;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -22,7 +22,7 @@ public class CompatencyPropertyRandomizer {
 
     public CompatencyPropertyRandomizer(Connection con ) throws SQLException {
         Statement stmt = con.createStatement();
-        ResultSet res = stmt.executeQuery("Select max(id) from CompatencyProperty");
+        ResultSet res = stmt.executeQuery("Select max(id) from CompetantProperty");
         while (res.next()){
             lastId = res.getLong(1);
         }
@@ -35,11 +35,11 @@ public class CompatencyPropertyRandomizer {
 
             Random r = new Random();
             pos1 = r.nextInt(list.size());
-            CompatencyProperty p1 = (CompatencyProperty) list.get(pos1);
-            pos2 = r.nextString(list.size());
-            CompatencyProperty p2 = (CompatencyProperty) list.get(pos2);
-            CompatencyProperty p3 = new CompatencyProperty();
-            p3.setId(i);
+            CompetantProperty p1 = (CompetantProperty) list.get(pos1);
+            pos2 = r.nextInt(list.size());
+            CompetantProperty p2 = (CompetantProperty) list.get(pos2);
+            CompetantProperty p3 = new CompetantProperty();
+            p3.setId((int)i);
             p3.setName(p1.getName() + " " + p2.getName() + pos1);
             // p3.setProjectId(pos1 > pos2 ? p1.getProjectId() : p2.getProjectId());
             l1.add(p3);

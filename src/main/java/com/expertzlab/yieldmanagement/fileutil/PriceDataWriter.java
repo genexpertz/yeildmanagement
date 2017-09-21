@@ -33,7 +33,7 @@ public class PriceDataWriter extends Thread{
                 System.out.println("Price -"+pri);
                 System.out.println("In new thread");
                 PreparedStatement statement = con.prepareStatement("insert into price values(?,?) ");
-                statement.setLong(1,((Price)pri).getPropertyID());
+                statement.setLong(1,((Price)pri).getPropertyId());
                 statement.setDate(2, (Date) ((Price)pri).getDate());
                 statement.setFloat(3,((Price)pri).getPrice());
 

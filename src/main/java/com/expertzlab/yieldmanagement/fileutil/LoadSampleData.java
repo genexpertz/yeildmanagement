@@ -6,6 +6,7 @@ import java.io.*;
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.List;
+import java.lang.String;
 
 /**
  * Created by expertzlab on 8/11/17.
@@ -38,7 +39,8 @@ public class LoadSampleData {
         }
         Owner own = null;
         Availability ava = null;
-        CompatencyProperty com = null;
+        CompetantProperty com = null;
+        OwnerProperty op = null;
         Price pri = null;
         PropertyManager pmgr =null;
         String record = null;
@@ -48,38 +50,47 @@ public class LoadSampleData {
             String[] rArray = record.split("\\|");
             DataSetter ds = null;
             switch (clazz.getName()){
-                case "com.expertzlab.surveyvi.model.Participant":{
-                    ds = new ParticipantDataSetter(clazz, harray, rArray);
-                    pt = (Participant) ds.run();
-                    pt.setId(count);
-                    arrayList.add(pt);
+                case "com.expertzlab.yieldmanagement.model.Availability":{
+                    ds = new AvailabilityDataSetter(clazz, harray, rArray);
+                    ava = (Availability) ds.run();
+                    arrayList.add(ava);
                     break;
                 }
-                case "com.expertzlab.surveyvi.model.Agent":{
-                    ds = new AgentDataSetter(clazz, harray, rArray);
-                    agt = (Agent) ds.run();
-                    agt.setId(count);
-                    arrayList.add(agt);
-                    break;
-                }
-                case "com.expertzlab.surveyvi.model.Program":{
-                    ds = new ProgramDataSetter(clazz, harray, rArray);
-                    pgm = (Program) ds.run();
-                    pgm.setId(count);
-                    arrayList.add(pgm);
-                    break;
-                }
-                case "com.expertzlab.surveyvi.model.Project":{
-                    ds = new ProjectDataSetter(clazz, harray, rArray);
-                    pro = (Project) ds.run();
-                    pro.setId(count);
-                    arrayList.add(pro);
-                    break;
-                }
-                case "com.expertzlab.surveyvi.model.Company":{
-                    ds = new CompanyDataSetter(clazz, harray, rArray);
-                    com = (Company) ds.run();
+                case "com.expertzlab.yieldmanagement.model.CompetantProperty":{
+                    ds = new CompatencyPropertyDataSetter(clazz, harray, rArray);
+                    com = (CompetantProperty) ds.run();
                     com.setId(count);
+                    arrayList.add(com);
+                    break;
+                }
+                case "com.expertzlab.yieldmanagement.models.Owner":{
+
+                    ds = new OwnerDataSetter(clazz, harray, rArray);
+                    own = (Owner) ds.run();
+                    own.setId(count);
+                    arrayList.add(own);
+                    break;
+                }
+                case "com.expertzlab.yieldmanagement.model.OwnerProperty":{
+                    ds = new OwnerPropertyDataSetter(clazz, harray, rArray) {
+                    };
+                    op = (OwnerProperty) ds.run();
+                    op.setPropertyId();
+                    arrayList.add(op);
+                    break;
+                }
+                case "com.expertzlab.yieldmanagement.model.price": {
+                    ds = new PriceDataSetter(clazz, harray, rArray);
+                    pri = (Price) ds.run();
+                    pri.setPropertyId();
+                    arrayList.add(com);
+                    break;
+                }
+                case "com.expertzlab.yieldmanagement.model.PropertyManager":{
+                    ds = new PropertyManagerDataSetter(clazz, harray, rArray) {
+                    };
+                    pmgr = (PropertyManager) ds.run();
+                    pmgr.setManagerId();
                     arrayList.add(com);
                     break;
                 }

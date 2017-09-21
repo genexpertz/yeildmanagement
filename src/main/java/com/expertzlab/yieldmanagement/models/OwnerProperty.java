@@ -4,16 +4,16 @@ package com.expertzlab.yieldmanagement.models;
  * Created by expertzlab on 8/11/17.
  */
 public class OwnerProperty {
-    String url;
+    String name;
     String region;
-    int propertyID;
+    int propertyId;
 
     public String getUrl() {
-        return url;
+        return name;
     }
 
     public void setUrl(String url) {
-        this.url = url;
+        this.name = url;
     }
 
     public String getRegion() {
@@ -24,11 +24,22 @@ public class OwnerProperty {
         this.region = region;
     }
 
-    public int getPropertyID() {
-        return propertyID;
+    public int getPropertyId() {
+        return propertyId;
     }
 
-    public void setPropertyID(int propertyID) {
-        this.propertyID = propertyID;
+    public void setPropertyId(int propertyId) {
+        this.propertyId = propertyId;
+    }
+
+    public void setPropertyId() {
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getName() {
+        return name;
     }
 }

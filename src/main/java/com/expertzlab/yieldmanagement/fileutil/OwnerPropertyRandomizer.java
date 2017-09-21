@@ -17,12 +17,12 @@ public class OwnerPropertyRandomizer {
     int pos1;
     int pos2;
 
-    int recordcount =100;
+    int recordcount =10;
     long lastId = 0;
 
     public OwnerPropertyRandomizer(Connection con ) throws SQLException {
         Statement stmt = con.createStatement();
-        ResultSet res = stmt.executeQuery("Select max(id) from OwnerProperty");
+        ResultSet res = stmt.executeQuery("Select max(id) from owner");
         while (res.next()){
             lastId = res.getLong(1);
         }
@@ -36,10 +36,10 @@ public class OwnerPropertyRandomizer {
             Random r = new Random();
             pos1 = r.nextInt(list.size());
             OwnerProperty p1 = (OwnerProperty) list.get(pos1);
-            pos2 = r.nextString(list.size());
+            pos2 = r.nextInt(list.size());
             OwnerProperty p2 = (OwnerProperty) list.get(pos2);
             OwnerProperty p3 = new OwnerProperty();
-            p3.setId(i);
+            p3.setPropertyId((int)i);
             p3.setName(p1.getName() + " " + p2.getName() + pos1);
             // p3.setProjectId(pos1 > pos2 ? p1.getProjectId() : p2.getProjectId());
             l1.add(p3);

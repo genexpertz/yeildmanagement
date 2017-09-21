@@ -7,7 +7,7 @@ import java.util.Date;
  */
 public class Price {
     Date date;
-    int propertyID;
+    int propertyId;
     Float price;
 
     public Date getDate() {
@@ -18,12 +18,12 @@ public class Price {
         this.date = date;
     }
 
-    public int getPropertyID() {
-        return propertyID;
+    public int getPropertyId() {
+        return propertyId;
     }
 
-    public void setPropertyID(int propertyID) {
-        this.propertyID = propertyID;
+    public void setPropertyId(int propertyId) {
+        this.propertyId = propertyId;
     }
 
     public Float getPrice() {
@@ -32,5 +32,8 @@ public class Price {
 
     public void setPrice(Float price) {
         this.price = price;
+    }
+
+    public void setPropertyId() {
     }
 }

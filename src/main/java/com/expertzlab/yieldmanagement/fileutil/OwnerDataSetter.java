@@ -20,18 +20,16 @@ public class OwnerDataSetter extends DataSetter {
     }
     public Owner run() {
         Owner own =null;
-        Class<?> loadedClass = null;
+        //Class<?> loadedClass = null;
         try {
-            loadedClass = Class.forName(clazz.getName());
-            own = (Owner) loadedClass.newInstance();
+            //loadedClass = Class.forName(clazz.getName());
+            own = (Owner) clazz.newInstance();
             for(int i = 0; i< hArray.length; i++) {
 
                 Method m = clazz.getMethod("set" +capitalizeFirstLetter( hArray[i]), String.class);
                 m.invoke(own, rArray[i]);
             }
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        } catch (IllegalAccessException e) {
+        }  catch (IllegalAccessException e) {
             System.out.println(e);
         } catch (InvocationTargetException e) {
             e.printStackTrace();

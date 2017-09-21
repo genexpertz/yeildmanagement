@@ -33,8 +33,9 @@ public class AvailabilityDataWriter extends Thread{
                 System.out.println("Availability -"+ava);
                 System.out.println("In new thread");
                 PreparedStatement statement = con.prepareStatement("insert into Availability values(?,?) ");
-                statement.setDate(1, (Date) ((Availability)ava).getDate());
+                statement.setString(1, (String) ((Availability)ava).getDate());
                 statement.setString(2,((Availability)ava).getRegion());
+                statement.setString(3,((Availability)ava).getAvailablity());
                 //statement.setLong(3,((Agent)agt).getProjectId());
                 statement.execute();
 

@@ -15,7 +15,7 @@ public class AvailabilityDataSetter extends DataSetter {
     String[] hArray;
     String[] rArray;
 
-    AvailabilityDataSetter(Class clazz, String[] hArray, String[] rArray) {
+    public AvailabilityDataSetter(Class clazz, String[] hArray, String[] rArray) {
         this.clazz =clazz;
         this.hArray = hArray;
         this.rArray = rArray;

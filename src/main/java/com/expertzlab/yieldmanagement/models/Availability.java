@@ -7,7 +7,16 @@ import java.util.Date;
  */
 public class Availability {
     String region;
-    Date date;
+    String date;
+    String availablity;
+
+    public String getAvailablity() {
+        return availablity;
+    }
+
+    public void setAvailablity(String availablity) {
+        this.availablity = availablity;
+    }
 
     public String getRegion() {
         return region;
@@ -17,11 +26,14 @@ public class Availability {
         this.region = region;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(long date) {
+    public void setDate(String date) {
         this.date = date;
+    }
+
+    public void setDate() {
     }
 }

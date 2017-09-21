@@ -39,7 +39,7 @@ public class AvailabilityRandomizer {
             pos2 = r.nextInt(list.size());
             Availability p2 = (Availability) list.get(pos2);
             Availability p3 = new Availability();
-            p3.setDate(i);
+            p3.setDate();
             p3.setRegion(p1.getRegion() + " " + p2.getRegion() + pos1);
             // p3.setProjectId(pos1 > pos2 ? p1.getProjectId() : p2.getProjectId());
             l1.add(p3);

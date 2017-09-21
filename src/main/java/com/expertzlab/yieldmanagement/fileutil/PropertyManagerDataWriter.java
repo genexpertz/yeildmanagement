@@ -3,7 +3,6 @@ package com.expertzlab.yieldmanagement.fileutil;
 import com.expertzlab.yieldmanagement.models.PropertyManager;
 
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.List;
@@ -33,7 +32,7 @@ public class PropertyManagerDataWriter extends Thread{
                 System.out.println("PropertyManager -"+pmgr);
                 System.out.println("In new thread");
                 PreparedStatement statement = con.prepareStatement("insert into PropertyManager values(?,?) ");
-                statement.setLong(1,((PropertyManager)pmgr).getManagerID());
+                statement.setLong(1,((PropertyManager)pmgr).getManagerId());
                 statement.setString(2, ((PropertyManager)pmgr).getName());
                 statement.setString(3,((PropertyManager)pmgr).getContact());
                 statement.setString(3,((PropertyManager)pmgr).getRegion());

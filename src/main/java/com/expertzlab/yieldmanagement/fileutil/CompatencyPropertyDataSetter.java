@@ -1,7 +1,6 @@
 package com.expertzlab.yieldmanagement.fileutil;
 
-import com.expertzlab.yieldmanagement.models.Availability;
-import com.expertzlab.yieldmanagement.models.CompatencyProperty;
+import com.expertzlab.yieldmanagement.models.CompetantProperty;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -19,12 +18,12 @@ public class CompatencyPropertyDataSetter extends DataSetter {
         this.hArray = hArray;
         this.rArray = rArray;
     }
-    public CompatencyProperty run() {
-        CompatencyProperty com =null;
+    public CompetantProperty run() {
+        CompetantProperty com =null;
         Class<?> loadedClass = null;
         try {
             loadedClass = Class.forName(clazz.getName());
-            com = (Availability) loadedClass.newInstance();
+            com = (CompetantProperty) loadedClass.newInstance();
             for(int i = 0; i< hArray.length; i++) {
 
                 Method m = clazz.getMethod("set" +capitalizeFirstLetter( hArray[i]), String.class);

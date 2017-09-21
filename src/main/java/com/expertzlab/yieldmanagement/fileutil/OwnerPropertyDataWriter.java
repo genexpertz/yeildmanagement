@@ -1,6 +1,5 @@
 package com.expertzlab.yieldmanagement.fileutil;
 
-import com.expertzlab.yieldmanagement.models.CompatencyProperty;
 import com.expertzlab.yieldmanagement.models.OwnerProperty;
 
 import java.sql.Connection;
@@ -33,9 +32,9 @@ public class OwnerPropertyDataWriter extends Thread{
                 System.out.println("OwnerProperty-"+op);
                 System.out.println("In new thread");
                 PreparedStatement statement = con.prepareStatement("insert into OwnerProperty  values(?,?) ");
-                statement.setLong(1,((OwnerProperty)op).getPropertyID());
+                statement.setLong(1,((OwnerProperty)op).getPropertyId());
                 statement.setString(2,((OwnerProperty)op).getRegion());
-                statement.setString(3,((OwnerProperty)op).getUrl());
+                statement.setString(3,((OwnerProperty)op).getName());
                 //statement.setFloat(4,((OwnerProperty)op).getPrice());
                 //statement.setLong(3,((Agent)agt).getProjectId());
                 statement.execute();

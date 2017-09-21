@@ -1,9 +1,6 @@
 package com.expertzlab.yieldmanagement.fileutil;
 
 
-import com.expertzlab.yieldmanagement.models.CompatencyProperty;
-import com.expertzlab.yieldmanagement.models.PropertyManager;
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -11,23 +8,27 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+
+
 /**
  * Created by preethup on 11/8/17.
  */
 public class WriteSampleData {
 
-    private static final String Availability = "com.expertzlab.surveyvi.model.Participant";
-    private static final String AGENT = "com.expertzlab.surveyvi.model.Agent";
-    private static final String Owner = "com.expertzlab.surveyvi.model.Program";
-    private static final String OwnerProperty = "com.expertzlab.surveyvi.model.Project";
-    private static final String Price = "com.expertzlab.surveyvi.model.Company";
+    private static final String Availability = "com.expertzlab.yieldmanagement.models.Availability";
+    private static final String CompatencyProperty = "com.expertzlab.yieldmanagement.models.CompetantProperty";
+    private static final String Owner = "com.expertzlab.yieldmanagement.models.Owner";
+    private static final String OwnerProperty = "com.expertzlabyieldmanagement.models.OwnerProperty";
+    private static final String Price = "com.expertzlab.yieldmanagement.models.Price";
+    private static final String PropertyManager = "com.expertzlab.yieldmanagement.models.PropertyManager";
+
 
     Map<Class,List> map;
     Connection con;
 
    public WriteSampleData(Map<Class,List> map) throws SQLException {
 
-        this.con = DriverManager.getConnection("jdbc:mysql://localhost:3306/surveyvisual", "root", "pp");
+        this.con = DriverManager.getConnection("jdbc:mysql://localhost:3306/yieldmanagement", "root", "senil");
         this.map = map;
     }
 
