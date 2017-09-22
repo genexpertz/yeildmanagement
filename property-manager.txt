@@ -1,0 +1,8 @@
+name|contact|region
+sajith|9856412547|aluva
+alvin|7532146974|kottayam
+raju|6547896541|ekm
+denu|9874587698|tcr
+seby|8865482134|kkd
+preethu|9978745876|ban
+shiny|9875412368|wayanad

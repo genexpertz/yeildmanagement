@@ -1,6 +1,6 @@
 package com.expertzlab.yieldmanagement.fileutil;
 
-import com.expertzlab.yieldmanagement.models.Owner;
+import com.expertzlab.yieldmanagement.models.PropertyManager;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -22,7 +22,7 @@ public class PropertyManagerRandomizer {
 
     public PropertyManagerRandomizer(Connection con ) throws SQLException {
         Statement stmt = con.createStatement();
-        ResultSet res = stmt.executeQuery("Select max(id) from agent");
+        ResultSet res = stmt.executeQuery("Select max(id) from property_manager");
         while (res.next()){
             lastId = res.getLong(1);
         }
@@ -34,13 +34,26 @@ public class PropertyManagerRandomizer {
 
             Random r = new Random();
             pos1 = r.nextInt(list.size());
-            Owner p1 = (Owner) list.get(pos1);
+            if(pos1 == 0) pos1++;
+            PropertyManager p1 = (PropertyManager) list.get(pos1);
             pos2 = r.nextInt(list.size());
-            Owner p2 = (Owner) list.get(pos2);
-            Owner p3 = new Owner();
-            p3.setId((int)i);
-            p3.setName(p1.getName() + " " + p2.getName() + pos1);
-            // p3.setProjectId(pos1 > pos2 ? p1.getProjectId() : p2.getProjectId());
+            if(pos2 == 0) pos2 ++;
+            PropertyManager p2 = (PropertyManager) list.get(pos2);
+            if(p1 == null || p2 == null){
+                throw new RuntimeException("Not enough value in the list");
+            }
+            PropertyManager p3 = new PropertyManager();
+            p3.setManagerId((int)i);
+            p3.setName(p1.getName() + " " + p2.getName() + r.nextInt(((int)(recordcount+lastId))));
+            p3.setRegion(pos1 > pos2 ? p1.getRegion() : p2.getRegion());
+            int rndNumer = r.nextInt(99999);
+            p3.setRegion(p3.getRegion()+rndNumer );
+            p3.setContact(pos1 > pos2 ? p1.getContact() : p2.getContact());
+
+            String contact = p3.getContact();
+            if(p3.getContact() != null) {
+                p3.setContact(contact.substring(0, contact.length() - ("" + rndNumer).length()-1) + rndNumer);
+            }
             l1.add(p3);
         }
 

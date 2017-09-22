@@ -8,7 +8,7 @@ import java.lang.reflect.Method;
 /**
  * Created by expertzlab on 8/11/17.
  */
-public abstract class PropertyManagerDataSetter extends DataSetter {
+public class PropertyManagerDataSetter extends DataSetter {
     Class clazz;
     String[] hArray;
     String[] rArray;

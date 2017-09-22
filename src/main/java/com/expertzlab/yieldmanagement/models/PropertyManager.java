@@ -40,7 +40,4 @@ public class PropertyManager {
     public void setManagerId(int managerId) {
         this.managerId = managerId;
     }
-
-    public void setManagerId() {
-    }
 }

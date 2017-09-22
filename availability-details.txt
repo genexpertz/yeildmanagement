@@ -1,0 +1,3 @@
+date|region|status|
+2017/09/01|thrissur|yes
+ |kannur|no

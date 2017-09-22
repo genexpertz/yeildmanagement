@@ -9,6 +9,7 @@ public class Availability {
     String region;
     String date;
     String availablity;
+    String status;
 
     public String getAvailablity() {
         return availablity;
@@ -20,6 +21,14 @@ public class Availability {
 
     public String getRegion() {
         return region;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 
     public void setRegion(String region) {

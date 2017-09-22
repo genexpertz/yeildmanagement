@@ -50,13 +50,13 @@ public class LoadSampleData {
             String[] rArray = record.split("\\|");
             DataSetter ds = null;
             switch (clazz.getName()){
-                case "com.expertzlab.yieldmanagement.model.Availability":{
+                case "com.expertzlab.yieldmanagement.models.Availability":{
                     ds = new AvailabilityDataSetter(clazz, harray, rArray);
                     ava = (Availability) ds.run();
                     arrayList.add(ava);
                     break;
                 }
-                case "com.expertzlab.yieldmanagement.model.CompetantProperty":{
+                case "com.expertzlab.yieldmanagement.models.CompetantProperty":{
                     ds = new CompatencyPropertyDataSetter(clazz, harray, rArray);
                     com = (CompetantProperty) ds.run();
                     com.setId(count);
@@ -71,7 +71,7 @@ public class LoadSampleData {
                     arrayList.add(own);
                     break;
                 }
-                case "com.expertzlab.yieldmanagement.model.OwnerProperty":{
+                case "com.expertzlab.yieldmanagement.models.OwnerProperty":{
                     ds = new OwnerPropertyDataSetter(clazz, harray, rArray) {
                     };
                     op = (OwnerProperty) ds.run();
@@ -79,19 +79,18 @@ public class LoadSampleData {
                     arrayList.add(op);
                     break;
                 }
-                case "com.expertzlab.yieldmanagement.model.price": {
+                case "com.expertzlab.yieldmanagement.models.price": {
                     ds = new PriceDataSetter(clazz, harray, rArray);
                     pri = (Price) ds.run();
                     pri.setPropertyId();
-                    arrayList.add(com);
+                    arrayList.add(pri);
                     break;
                 }
-                case "com.expertzlab.yieldmanagement.model.PropertyManager":{
-                    ds = new PropertyManagerDataSetter(clazz, harray, rArray) {
-                    };
+                case "com.expertzlab.yieldmanagement.models.PropertyManager":{
+                    ds = new PropertyManagerDataSetter(clazz, harray, rArray);
                     pmgr = (PropertyManager) ds.run();
-                    pmgr.setManagerId();
-                    arrayList.add(com);
+                    //pmgr.setManagerId(i);
+                    arrayList.add(pmgr);
                     break;
                 }
             }
