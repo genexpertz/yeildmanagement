@@ -2,31 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="52a586e5-851c-4cdf-98c0-c4a8f0b0427d" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/availability-details.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/property-manager.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/compatency-property-list.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/owner-property.txt" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/expertzlab/yieldmanagement/fileutil/LoadSampleData$2.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/yieldmanagement-1.0-SNAPSHOT.jar" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/expertzlab/yieldmanagement/fileutil/AvailabilityDataWriter.class" afterPath="$PROJECT_DIR$/target/classes/com/expertzlab/yieldmanagement/fileutil/AvailabilityDataWriter.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/expertzlab/yieldmanagement/fileutil/DataPopulation.class" afterPath="$PROJECT_DIR$/target/classes/com/expertzlab/yieldmanagement/fileutil/DataPopulation.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/expertzlab/yieldmanagement/fileutil/CompatencyPropertyDataWriter.class" afterPath="$PROJECT_DIR$/target/classes/com/expertzlab/yieldmanagement/fileutil/CompatencyPropertyDataWriter.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/expertzlab/yieldmanagement/fileutil/CompatencyPropertyRandomizer.class" afterPath="$PROJECT_DIR$/target/classes/com/expertzlab/yieldmanagement/fileutil/CompatencyPropertyRandomizer.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/expertzlab/yieldmanagement/fileutil/LoadSampleData$1.class" afterPath="$PROJECT_DIR$/target/classes/com/expertzlab/yieldmanagement/fileutil/LoadSampleData$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/expertzlab/yieldmanagement/fileutil/OwnerPropertyDataWriter.class" afterPath="$PROJECT_DIR$/target/classes/com/expertzlab/yieldmanagement/fileutil/OwnerPropertyDataWriter.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/expertzlab/yieldmanagement/fileutil/OwnerPropertyRandomizer.class" afterPath="$PROJECT_DIR$/target/classes/com/expertzlab/yieldmanagement/fileutil/OwnerPropertyRandomizer.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/expertzlab/yieldmanagement/fileutil/PropertyManagerDataWriter.class" afterPath="$PROJECT_DIR$/target/classes/com/expertzlab/yieldmanagement/fileutil/PropertyManagerDataWriter.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/expertzlab/yieldmanagement/fileutil/PropertyManagerRandomizer.class" afterPath="$PROJECT_DIR$/target/classes/com/expertzlab/yieldmanagement/fileutil/PropertyManagerRandomizer.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/expertzlab/yieldmanagement/models/Availability.class" afterPath="$PROJECT_DIR$/target/classes/com/expertzlab/yieldmanagement/models/Availability.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/yieldmanagement-1.0-SNAPSHOT.jar" afterPath="$PROJECT_DIR$/target/yieldmanagement-1.0-SNAPSHOT.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classtype-datafile-mapping.properties" afterPath="$PROJECT_DIR$/classtype-datafile-mapping.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/expertzlab/yieldmanagement/fileutil/AvailabilityDataWriter.java" afterPath="$PROJECT_DIR$/src/main/java/com/expertzlab/yieldmanagement/fileutil/AvailabilityDataWriter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/expertzlab/yieldmanagement/fileutil/DataPopulation.java" afterPath="$PROJECT_DIR$/src/main/java/com/expertzlab/yieldmanagement/fileutil/DataPopulation.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/expertzlab/yieldmanagement/fileutil/LoadSampleData.java" afterPath="$PROJECT_DIR$/src/main/java/com/expertzlab/yieldmanagement/fileutil/LoadSampleData.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/expertzlab/yieldmanagement/fileutil/PropertyManagerDataSetter.java" afterPath="$PROJECT_DIR$/src/main/java/com/expertzlab/yieldmanagement/fileutil/PropertyManagerDataSetter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/expertzlab/yieldmanagement/fileutil/CompatencyPropertyDataWriter.java" afterPath="$PROJECT_DIR$/src/main/java/com/expertzlab/yieldmanagement/fileutil/CompatencyPropertyDataWriter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/expertzlab/yieldmanagement/fileutil/CompatencyPropertyRandomizer.java" afterPath="$PROJECT_DIR$/src/main/java/com/expertzlab/yieldmanagement/fileutil/CompatencyPropertyRandomizer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/expertzlab/yieldmanagement/fileutil/OwnerPropertyDataWriter.java" afterPath="$PROJECT_DIR$/src/main/java/com/expertzlab/yieldmanagement/fileutil/OwnerPropertyDataWriter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/expertzlab/yieldmanagement/fileutil/OwnerPropertyRandomizer.java" afterPath="$PROJECT_DIR$/src/main/java/com/expertzlab/yieldmanagement/fileutil/OwnerPropertyRandomizer.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/expertzlab/yieldmanagement/fileutil/PropertyManagerDataWriter.java" afterPath="$PROJECT_DIR$/src/main/java/com/expertzlab/yieldmanagement/fileutil/PropertyManagerDataWriter.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/expertzlab/yieldmanagement/fileutil/PropertyManagerRandomizer.java" afterPath="$PROJECT_DIR$/src/main/java/com/expertzlab/yieldmanagement/fileutil/PropertyManagerRandomizer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/expertzlab/yieldmanagement/models/Availability.java" afterPath="$PROJECT_DIR$/src/main/java/com/expertzlab/yieldmanagement/models/Availability.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/expertzlab/yieldmanagement/models/PropertyManager.java" afterPath="$PROJECT_DIR$/src/main/java/com/expertzlab/yieldmanagement/models/PropertyManager.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/expertzlab/yieldmanagement/fileutil/WriteSampleData.java" afterPath="$PROJECT_DIR$/src/main/java/com/expertzlab/yieldmanagement/fileutil/WriteSampleData.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -40,86 +37,44 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="OwnerPropertyRandomizer.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/expertzlab/yieldmanagement/fileutil/OwnerPropertyRandomizer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="44" column="59" lean-forward="true" selection-start-line="44" selection-start-column="59" selection-end-line="44" selection-end-column="59" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CompatencyPropertyRandomizer.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/expertzlab/yieldmanagement/fileutil/CompatencyPropertyRandomizer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="140">
+              <caret line="15" column="13" lean-forward="false" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="OwnerRandomizer.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/expertzlab/yieldmanagement/fileutil/OwnerRandomizer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="44" column="57" lean-forward="false" selection-start-line="44" selection-start-column="49" selection-end-line="44" selection-end-column="58" />
+            <state relative-caret-position="220">
+              <caret line="19" column="17" lean-forward="false" selection-start-line="19" selection-start-column="17" selection-end-line="19" selection-end-column="17" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PropertyManagerRandomizer.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="PropertyManagerRandomizer.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/expertzlab/yieldmanagement/fileutil/PropertyManagerRandomizer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="211">
-              <caret line="52" column="45" lean-forward="true" selection-start-line="52" selection-start-column="45" selection-end-line="52" selection-end-column="45" />
+            <state relative-caret-position="147">
+              <caret line="55" column="12" lean-forward="false" selection-start-line="55" selection-start-column="12" selection-end-line="55" selection-end-column="12" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PropertyManagerDataWriter.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/expertzlab/yieldmanagement/fileutil/PropertyManagerDataWriter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="37" column="37" lean-forward="false" selection-start-line="37" selection-start-column="37" selection-end-line="37" selection-end-column="37" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="property-manager.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/property-manager.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="140">
-              <caret line="7" column="24" lean-forward="false" selection-start-line="7" selection-start-column="24" selection-end-line="7" selection-end-column="24" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="WriteSampleData.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/expertzlab/yieldmanagement/fileutil/WriteSampleData.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="237">
-              <caret line="30" column="47" lean-forward="true" selection-start-line="30" selection-start-column="47" selection-end-line="30" selection-end-column="47" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DataPopulation.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/expertzlab/yieldmanagement/fileutil/DataPopulation.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="48" lean-forward="false" selection-start-line="0" selection-start-column="48" selection-end-line="0" selection-end-column="48" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PropertyManagerDataSetter.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/expertzlab/yieldmanagement/fileutil/PropertyManagerDataSetter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="127">
-              <caret line="42" column="0" lean-forward="false" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LoadSampleData.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/expertzlab/yieldmanagement/fileutil/LoadSampleData.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="620">
-              <caret line="85" column="39" lean-forward="true" selection-start-line="85" selection-start-column="39" selection-end-line="85" selection-end-column="39" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -128,7 +83,61 @@
         <entry file="file://$PROJECT_DIR$/classtype-datafile-mapping.properties">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
-              <caret line="0" column="53" lean-forward="false" selection-start-line="0" selection-start-column="38" selection-end-line="0" selection-end-column="53" />
+              <caret line="0" column="66" lean-forward="false" selection-start-line="0" selection-start-column="66" selection-end-line="0" selection-end-column="66" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DataPopulation.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/expertzlab/yieldmanagement/fileutil/DataPopulation.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="236">
+              <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LoadSampleData.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/expertzlab/yieldmanagement/fileutil/LoadSampleData.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="107">
+              <caret line="33" column="0" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="OwnerPropertyDataWriter.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/expertzlab/yieldmanagement/fileutil/OwnerPropertyDataWriter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="233">
+              <caret line="33" column="108" lean-forward="false" selection-start-line="33" selection-start-column="108" selection-end-line="33" selection-end-column="108" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="WriteSampleData.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/expertzlab/yieldmanagement/fileutil/WriteSampleData.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="20" column="64" lean-forward="false" selection-start-line="20" selection-start-column="64" selection-end-line="20" selection-end-column="64" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="OwnerPropertyDataSetter.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/expertzlab/yieldmanagement/fileutil/OwnerPropertyDataSetter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="107">
+              <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -170,16 +179,11 @@
         <option value="$PROJECT_DIR$/src/main/java/com/expertzlab/yieldmanagement/fileutil/DataWriter.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/expertzlab/yieldmanagement/fileutil/CompatencyPropertyDataSetter.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/expertzlab/yieldmanagement/models/Price.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/expertzlab/yieldmanagement/fileutil/OwnerPropertyDataWriter.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/expertzlab/yieldmanagement/models/OwnerProperty.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/expertzlab/yieldmanagement/fileutil/PriceRandomizer.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/expertzlab/yieldmanagement/fileutil/CompatencyPropertyRandomizer.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/expertzlab/yieldmanagement/models/CompetantProperty.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/expertzlab/yieldmanagement/fileutil/CompatencyPropertyDataWriter.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/expertzlab/yieldmanagement/fileutil/OwnerDataSetter.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/expertzlab/yieldmanagement/fileutil/WriteSampleData.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/expertzlab/yieldmanagement/fileutil/OwnerPropertyRandomizer.java" />
         <option value="$PROJECT_DIR$/owner-deatails.txt" />
         <option value="$PROJECT_DIR$/src/main/java/com/expertzlab/yieldmanagement/fileutil/OwnerRandomizer.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/expertzlab/yieldmanagement/fileutil/AvailabilityDataWriter.java" />
@@ -189,13 +193,20 @@
         <option value="$PROJECT_DIR$/src/main/java/com/expertzlab/yieldmanagement/fileutil/AvailabilityRandomizer.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/expertzlab/yieldmanagement/fileutil/OwnerDataWriter.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/expertzlab/yieldmanagement/fileutil/DataPopulation.java" />
-        <option value="$PROJECT_DIR$/classtype-datafile-mapping.properties" />
         <option value="$PROJECT_DIR$/src/main/java/com/expertzlab/yieldmanagement/models/PropertyManager.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/expertzlab/yieldmanagement/fileutil/PropertyManagerDataSetter.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/expertzlab/yieldmanagement/fileutil/PropertyManagerDataWriter.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/expertzlab/yieldmanagement/fileutil/LoadSampleData.java" />
         <option value="$PROJECT_DIR$/property-manager.txt" />
+        <option value="$PROJECT_DIR$/owner-property.txt" />
         <option value="$PROJECT_DIR$/src/main/java/com/expertzlab/yieldmanagement/fileutil/PropertyManagerRandomizer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/expertzlab/yieldmanagement/fileutil/PropertyManagerDataWriter.java" />
+        <option value="$PROJECT_DIR$/compatency-property-list.txt" />
+        <option value="$PROJECT_DIR$/src/main/java/com/expertzlab/yieldmanagement/fileutil/CompatencyPropertyRandomizer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/expertzlab/yieldmanagement/fileutil/CompatencyPropertyDataWriter.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/expertzlab/yieldmanagement/fileutil/LoadSampleData.java" />
+        <option value="$PROJECT_DIR$/classtype-datafile-mapping.properties" />
+        <option value="$PROJECT_DIR$/src/main/java/com/expertzlab/yieldmanagement/fileutil/WriteSampleData.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/expertzlab/yieldmanagement/fileutil/OwnerPropertyRandomizer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/expertzlab/yieldmanagement/fileutil/OwnerPropertyDataWriter.java" />
       </list>
     </option>
   </component>
@@ -228,9 +239,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scratches" />
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -300,6 +310,10 @@
               <option name="myItemId" value="yieldmanagement" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="models" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -333,10 +347,11 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../surveyvisual" />
     <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
@@ -623,12 +638,13 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30804953" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19349845" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32972136" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.187251" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18804781" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32972136" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -640,15 +656,14 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32972136" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -657,18 +672,18 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3993808" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32972136" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.41640866" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32972136" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.876161" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.7631579" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2804781" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32972136" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29256967" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32972136" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19043824" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32972136" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
     </layout-to-restore>
@@ -678,15 +693,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/expertzlab/yieldmanagement/fileutil/LoadSampleData.java</url>
-          <line>33</line>
-          <properties />
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
-      </breakpoints>
-      <option name="time" value="11" />
+      <option name="time" value="20" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
@@ -699,21 +706,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/expertzlab/yieldmanagement/models/Price.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/expertzlab/yieldmanagement/models/Availability.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="9" column="14" lean-forward="false" selection-start-line="9" selection-start-column="14" selection-end-line="9" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/expertzlab/yieldmanagement/fileutil/OwnerDataSetter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="260">
@@ -725,7 +717,24 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="220">
           <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#230#231#0" expanded="false" />
+            <element signature="e#259#260#0" expanded="false" />
+            <element signature="e#303#304#0" expanded="false" />
+            <element signature="e#339#340#0" expanded="false" />
+            <element signature="e#373#374#0" expanded="false" />
+            <element signature="e#403#404#0" expanded="false" />
+            <element signature="e#449#450#0" expanded="false" />
+            <element signature="e#487#488#0" expanded="false" />
+            <element signature="e#518#519#0" expanded="false" />
+            <element signature="e#545#546#0" expanded="false" />
+            <element signature="e#585#586#0" expanded="false" />
+            <element signature="e#617#618#0" expanded="false" />
+            <element signature="e#650#651#0" expanded="false" />
+            <element signature="e#682#683#0" expanded="false" />
+            <element signature="e#729#730#0" expanded="false" />
+            <element signature="e#771#772#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -781,6 +790,8 @@
             <element signature="e#511#512#0" expanded="false" />
             <element signature="e#560#561#0" expanded="false" />
             <element signature="e#604#605#0" expanded="false" />
+            <element signature="e#685#686#0" expanded="false" />
+            <element signature="e#717#718#0" expanded="false" />
             <element signature="e#748#749#0" expanded="false" />
             <element signature="e#775#776#0" expanded="false" />
           </folding>
@@ -816,14 +827,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/expertzlab/yieldmanagement/fileutil/CompatencyPropertyDataSetter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="560">
-          <caret line="32" column="44" lean-forward="true" selection-start-line="32" selection-start-column="44" selection-end-line="32" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/expertzlab/yieldmanagement/fileutil/DataWriter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -855,61 +858,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/expertzlab/yieldmanagement/fileutil/OwnerPropertyDataSetter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="20" column="5" lean-forward="false" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/expertzlab/yieldmanagement/models/CompetantProperty.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="11" column="24" lean-forward="false" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
-          <folding>
-            <element signature="e#240#241#0" expanded="false" />
-            <element signature="e#273#274#0" expanded="false" />
-            <element signature="e#301#302#0" expanded="false" />
-            <element signature="e#334#335#0" expanded="false" />
-            <element signature="e#363#364#0" expanded="false" />
-            <element signature="e#407#408#0" expanded="false" />
-            <element signature="e#443#444#0" expanded="false" />
-            <element signature="e#474#475#0" expanded="false" />
-            <element signature="e#501#502#0" expanded="false" />
-            <element signature="e#541#542#0" expanded="false" />
-            <element signature="e#573#574#0" expanded="false" />
-            <element signature="e#604#605#0" expanded="false" />
-            <element signature="e#632#633#0" expanded="false" />
-            <element signature="e#673#674#0" expanded="false" />
-            <element signature="e#707#708#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/expertzlab/yieldmanagement/models/OwnerProperty.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="500">
-          <caret line="37" column="38" lean-forward="false" selection-start-line="37" selection-start-column="38" selection-end-line="37" selection-end-column="38" />
-          <folding>
-            <element signature="e#206#207#0" expanded="false" />
-            <element signature="e#233#234#0" expanded="false" />
-            <element signature="e#271#272#0" expanded="false" />
-            <element signature="e#302#303#0" expanded="false" />
-            <element signature="e#335#336#0" expanded="false" />
-            <element signature="e#364#365#0" expanded="false" />
-            <element signature="e#408#409#0" expanded="false" />
-            <element signature="e#444#445#0" expanded="false" />
-            <element signature="e#478#479#0" expanded="false" />
-            <element signature="e#511#512#0" expanded="false" />
-            <element signature="e#560#561#0" expanded="false" />
-            <element signature="e#604#605#0" expanded="false" />
-            <element signature="e#748#749#0" expanded="false" />
-            <element signature="e#775#776#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/expertzlab/yieldmanagement/fileutil/PriceRandomizer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="510">
@@ -931,15 +879,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="206">
           <caret line="698" column="29" lean-forward="false" selection-start-line="698" selection-start-column="29" selection-end-line="698" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/expertzlab/yieldmanagement/fileutil/OwnerPropertyDataWriter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="29" column="16" lean-forward="false" selection-start-line="29" selection-start-column="12" selection-end-line="29" selection-end-column="16" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -966,26 +905,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/expertzlab/yieldmanagement/fileutil/CompatencyPropertyDataWriter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="560">
-          <caret line="33" column="99" lean-forward="false" selection-start-line="33" selection-start-column="81" selection-end-line="33" selection-end-column="99" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/java-8-oracle/src.zip!/java/util/Random.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="421" column="16" lean-forward="false" selection-start-line="421" selection-start-column="16" selection-end-line="421" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/expertzlab/yieldmanagement/fileutil/CompatencyPropertyRandomizer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="38" column="42" lean-forward="true" selection-start-line="38" selection-start-column="42" selection-end-line="38" selection-end-column="42" />
           <folding />
         </state>
       </provider>
@@ -998,14 +921,6 @@
             <element signature="e#265#266#0" expanded="false" />
             <element signature="e#293#294#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/expertzlab/yieldmanagement/fileutil/OwnerPropertyRandomizer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="720">
-          <caret line="44" column="23" lean-forward="false" selection-start-line="44" selection-start-column="23" selection-end-line="44" selection-end-column="23" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1022,31 +937,16 @@
         <state relative-caret-position="339">
           <caret line="25" column="31" lean-forward="false" selection-start-line="25" selection-start-column="31" selection-end-line="25" selection-end-column="31" />
           <folding>
-            <element signature="e#518#519#0" expanded="true" />
-            <element signature="e#562#563#0" expanded="true" />
-            <element signature="e#598#599#0" expanded="true" />
-            <element signature="e#642#643#0" expanded="true" />
-            <element signature="e#678#679#0" expanded="true" />
+            <element signature="e#518#519#0" expanded="false" />
+            <element signature="e#562#563#0" expanded="false" />
+            <element signature="e#598#599#0" expanded="false" />
+            <element signature="e#642#643#0" expanded="false" />
+            <element signature="e#678#679#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/target/availability-details">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="5" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/owner-deatails.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20">
-          <caret line="1" column="25" lean-forward="false" selection-start-line="1" selection-start-column="17" selection-end-line="1" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/target/availability-details" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/expertzlab/yieldmanagement/fileutil/AvailabilityDataWriter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="260">
@@ -1060,24 +960,8 @@
         <state relative-caret-position="400">
           <caret line="41" column="12" lean-forward="false" selection-start-line="41" selection-start-column="12" selection-end-line="41" selection-end-column="12" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/availability-details.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="40">
-          <caret line="2" column="11" lean-forward="false" selection-start-line="2" selection-start-column="11" selection-end-line="2" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classtype-datafile-mapping.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="53" lean-forward="false" selection-start-line="0" selection-start-column="38" selection-end-line="0" selection-end-column="53" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1086,39 +970,23 @@
         <state relative-caret-position="11">
           <caret line="30" column="0" lean-forward="true" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
           <folding>
-            <element signature="e#230#231#0" expanded="true" />
-            <element signature="e#259#260#0" expanded="true" />
-            <element signature="e#303#304#0" expanded="true" />
-            <element signature="e#339#340#0" expanded="true" />
-            <element signature="e#373#374#0" expanded="true" />
-            <element signature="e#403#404#0" expanded="true" />
-            <element signature="e#449#450#0" expanded="true" />
-            <element signature="e#487#488#0" expanded="true" />
-            <element signature="e#518#519#0" expanded="true" />
-            <element signature="e#545#546#0" expanded="true" />
-            <element signature="e#585#586#0" expanded="true" />
-            <element signature="e#617#618#0" expanded="true" />
-            <element signature="e#650#651#0" expanded="true" />
-            <element signature="e#682#683#0" expanded="true" />
-            <element signature="e#729#730#0" expanded="true" />
-            <element signature="e#771#772#0" expanded="true" />
+            <element signature="e#230#231#0" expanded="false" />
+            <element signature="e#259#260#0" expanded="false" />
+            <element signature="e#303#304#0" expanded="false" />
+            <element signature="e#339#340#0" expanded="false" />
+            <element signature="e#373#374#0" expanded="false" />
+            <element signature="e#403#404#0" expanded="false" />
+            <element signature="e#449#450#0" expanded="false" />
+            <element signature="e#487#488#0" expanded="false" />
+            <element signature="e#518#519#0" expanded="false" />
+            <element signature="e#545#546#0" expanded="false" />
+            <element signature="e#585#586#0" expanded="false" />
+            <element signature="e#617#618#0" expanded="false" />
+            <element signature="e#650#651#0" expanded="false" />
+            <element signature="e#682#683#0" expanded="false" />
+            <element signature="e#729#730#0" expanded="false" />
+            <element signature="e#771#772#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/expertzlab/yieldmanagement/fileutil/WriteSampleData.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="237">
-          <caret line="30" column="47" lean-forward="true" selection-start-line="30" selection-start-column="47" selection-end-line="30" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/expertzlab/yieldmanagement/fileutil/PropertyManagerDataSetter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="127">
-          <caret line="42" column="0" lean-forward="false" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1130,30 +998,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/expertzlab/yieldmanagement/fileutil/LoadSampleData.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/expertzlab/yieldmanagement/fileutil/PropertyManagerDataSetter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="620">
-          <caret line="85" column="39" lean-forward="true" selection-start-line="85" selection-start-column="39" selection-end-line="85" selection-end-column="39" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="256">
+          <caret line="42" column="0" lean-forward="false" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/expertzlab/yieldmanagement/fileutil/PropertyManagerDataWriter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="190">
-          <caret line="37" column="37" lean-forward="false" selection-start-line="37" selection-start-column="37" selection-end-line="37" selection-end-column="37" />
+          <caret line="34" column="64" lean-forward="true" selection-start-line="34" selection-start-column="64" selection-end-line="34" selection-end-column="64" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/expertzlab/yieldmanagement/fileutil/DataPopulation.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/expertzlab/yieldmanagement/models/CompetantProperty.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="48" lean-forward="false" selection-start-line="0" selection-start-column="48" selection-end-line="0" selection-end-column="48" />
+        <state relative-caret-position="-172">
+          <caret line="5" column="29" lean-forward="true" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="30" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#215#216#0" expanded="false" />
+            <element signature="e#240#241#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1162,23 +1029,165 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="140">
           <caret line="7" column="24" lean-forward="false" selection-start-line="7" selection-start-column="24" selection-end-line="7" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/availability-details.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="40">
+          <caret line="2" column="11" lean-forward="false" selection-start-line="2" selection-start-column="11" selection-end-line="2" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/owner-deatails.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="20">
+          <caret line="1" column="25" lean-forward="false" selection-start-line="1" selection-start-column="17" selection-end-line="1" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/expertzlab/yieldmanagement/fileutil/CompatencyPropertyDataSetter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="32" column="32" lean-forward="true" selection-start-line="32" selection-start-column="32" selection-end-line="32" selection-end-column="32" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/expertzlab/yieldmanagement/fileutil/OwnerRandomizer.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/expertzlab/yieldmanagement/models/OwnerProperty.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="44" column="57" lean-forward="false" selection-start-line="44" selection-start-column="49" selection-end-line="44" selection-end-column="58" />
+        <state relative-caret-position="160">
+          <caret line="8" column="19" lean-forward="false" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
+          <folding>
+            <element signature="e#206#207#0" expanded="false" />
+            <element signature="e#233#234#0" expanded="false" />
+            <element signature="e#271#272#0" expanded="false" />
+            <element signature="e#302#303#0" expanded="false" />
+            <element signature="e#335#336#0" expanded="false" />
+            <element signature="e#364#365#0" expanded="false" />
+            <element signature="e#408#409#0" expanded="false" />
+            <element signature="e#444#445#0" expanded="false" />
+            <element signature="e#478#479#0" expanded="false" />
+            <element signature="e#511#512#0" expanded="false" />
+            <element signature="e#560#561#0" expanded="false" />
+            <element signature="e#604#605#0" expanded="false" />
+            <element signature="e#685#686#0" expanded="false" />
+            <element signature="e#717#718#0" expanded="false" />
+            <element signature="e#748#749#0" expanded="false" />
+            <element signature="e#775#776#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/expertzlab/yieldmanagement/fileutil/CompatencyPropertyDataWriter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="460">
+          <caret line="28" column="22" lean-forward="false" selection-start-line="28" selection-start-column="22" selection-end-line="28" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/owner-property.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="5" column="14" lean-forward="false" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/compatency-property-list.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="4" column="11" lean-forward="false" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classtype-datafile-mapping.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="66" lean-forward="false" selection-start-line="0" selection-start-column="66" selection-end-line="0" selection-end-column="66" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/expertzlab/yieldmanagement/fileutil/DataPopulation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="236">
+          <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/expertzlab/yieldmanagement/fileutil/LoadSampleData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="107">
+          <caret line="33" column="0" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/expertzlab/yieldmanagement/fileutil/OwnerPropertyDataSetter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="107">
+          <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/expertzlab/yieldmanagement/fileutil/WriteSampleData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="64" lean-forward="false" selection-start-line="20" selection-start-column="64" selection-end-line="20" selection-end-column="64" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/expertzlab/yieldmanagement/fileutil/PropertyManagerRandomizer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="211">
-          <caret line="52" column="45" lean-forward="true" selection-start-line="52" selection-start-column="45" selection-end-line="52" selection-end-column="45" />
+        <state relative-caret-position="147">
+          <caret line="55" column="12" lean-forward="false" selection-start-line="55" selection-start-column="12" selection-end-line="55" selection-end-column="12" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/expertzlab/yieldmanagement/fileutil/OwnerRandomizer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="19" column="17" lean-forward="false" selection-start-line="19" selection-start-column="17" selection-end-line="19" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/expertzlab/yieldmanagement/fileutil/OwnerPropertyDataWriter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="233">
+          <caret line="33" column="108" lean-forward="false" selection-start-line="33" selection-start-column="108" selection-end-line="33" selection-end-column="108" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/expertzlab/yieldmanagement/fileutil/CompatencyPropertyRandomizer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="15" column="13" lean-forward="false" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/expertzlab/yieldmanagement/fileutil/OwnerPropertyRandomizer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="44" column="59" lean-forward="true" selection-start-line="44" selection-start-column="59" selection-end-line="44" selection-end-column="59" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

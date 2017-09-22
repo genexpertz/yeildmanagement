@@ -1,0 +1,6 @@
+name|region
+nest|tcr
+kripa|kkm
+whitehouse|ekm
+rainbow|kkd
+sweet|kottayam

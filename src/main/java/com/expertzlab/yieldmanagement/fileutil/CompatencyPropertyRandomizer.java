@@ -40,12 +40,21 @@ public class CompatencyPropertyRandomizer {
             CompetantProperty p2 = (CompetantProperty) list.get(pos2);
             CompetantProperty p3 = new CompetantProperty();
             p3.setId((int)i);
-            p3.setName(p1.getName() + " " + p2.getName() + pos1);
-            // p3.setProjectId(pos1 > pos2 ? p1.getProjectId() : p2.getProjectId());
+            p3.setName(p1.getName() + " " + p2.getName() + r.nextInt(((int)(recordcount+lastId))));
+            p3.setRegion(pos1 > pos2 ? p1.getRegion() : p2.getRegion());
+            int rndNumer = r.nextInt(9999);
+            p3.setRegion(p3.getRegion()+ " HN#"+rndNumer );
+            p3.setPrice(pos1 > pos2 ? p1.getPrice() : p2.getPrice());
+
+            Float price = p3.getPrice();
+            //if(p3.getPrice() != null) {
+                //p3.setPrice(price.subString(0, price.length() - ("" + rndNumer).length()-1) + rndNumer);
+           // }
             l1.add(p3);
         }
 
         return l1;
     }
 }
+
 

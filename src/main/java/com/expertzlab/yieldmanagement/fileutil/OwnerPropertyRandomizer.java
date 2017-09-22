@@ -22,7 +22,7 @@ public class OwnerPropertyRandomizer {
 
     public OwnerPropertyRandomizer(Connection con ) throws SQLException {
         Statement stmt = con.createStatement();
-        ResultSet res = stmt.executeQuery("Select max(id) from owner");
+        ResultSet res = stmt.executeQuery("Select max(id) from owner_property");
         while (res.next()){
             lastId = res.getLong(1);
         }
@@ -32,7 +32,6 @@ public class OwnerPropertyRandomizer {
 
         for (long i = lastId+1; i <= recordcount; i++) {
 
-
             Random r = new Random();
             pos1 = r.nextInt(list.size());
             OwnerProperty p1 = (OwnerProperty) list.get(pos1);
@@ -40,12 +39,22 @@ public class OwnerPropertyRandomizer {
             OwnerProperty p2 = (OwnerProperty) list.get(pos2);
             OwnerProperty p3 = new OwnerProperty();
             p3.setPropertyId((int)i);
-            p3.setName(p1.getName() + " " + p2.getName() + pos1);
-            // p3.setProjectId(pos1 > pos2 ? p1.getProjectId() : p2.getProjectId());
+            p3.setName(p1.getName() + " " + p2.getName() + r.nextInt(((int)(recordcount+lastId))));
+            p3.setRegion(pos1 > pos2 ? p1.getRegion() : p2.getRegion());
+            int rndNumer = r.nextInt(99999);
+            p3.setRegion(p3.getRegion()+ " HN#"+rndNumer );
+            p3.setPropertyId(r.nextInt(20));
+            //p3.setContact(pos1 > pos2 ? p1.getContact() : p2.getContact());
+
+           // String contact = p3.getContact();
+            //if(p3.getContact() != null) {
+              //  p3.setContact(contact.substring(0, contact.length() - ("" + rndNumer).length()-1) + rndNumer);
+            //}
             l1.add(p3);
         }
 
         return l1;
     }
 }
+
 

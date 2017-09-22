@@ -31,7 +31,7 @@ public class CompatencyPropertyDataWriter extends Thread{
             for(Object com :list) {
                 System.out.println("CompetantProperty-"+com);
                 System.out.println("In new thread");
-                PreparedStatement statement = con.prepareStatement("insert into  compatencyproperty values(?,?) ");
+                PreparedStatement statement = con.prepareStatement("insert into  compatency_property_list values(?,?,?) ");
                 statement.setLong(1,((CompetantProperty)com).getId());
                 statement.setString(2,((CompetantProperty)com).getRegion());
                 statement.setString(3,((CompetantProperty)com).getName());

@@ -31,10 +31,10 @@ public class OwnerPropertyDataWriter extends Thread{
             for(Object op :list) {
                 System.out.println("OwnerProperty-"+op);
                 System.out.println("In new thread");
-                PreparedStatement statement = con.prepareStatement("insert into OwnerProperty  values(?,?) ");
+                PreparedStatement statement = con.prepareStatement("insert into owner_property  values(?,?,?,?) ");
                 statement.setLong(1,((OwnerProperty)op).getPropertyId());
-                statement.setString(2,((OwnerProperty)op).getRegion());
-                statement.setString(3,((OwnerProperty)op).getName());
+                statement.setString(2,((OwnerProperty)op).getName());
+                statement.setString(3,((OwnerProperty)op).getRegion());
                 //statement.setFloat(4,((OwnerProperty)op).getPrice());
                 //statement.setLong(3,((Agent)agt).getProjectId());
                 statement.execute();

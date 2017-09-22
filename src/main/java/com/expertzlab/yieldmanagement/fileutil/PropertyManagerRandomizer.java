@@ -48,12 +48,12 @@ public class PropertyManagerRandomizer {
             p3.setRegion(pos1 > pos2 ? p1.getRegion() : p2.getRegion());
             int rndNumer = r.nextInt(99999);
             p3.setRegion(p3.getRegion()+rndNumer );
-            p3.setContact(pos1 > pos2 ? p1.getContact() : p2.getContact());
+          //  p3.setContact(pos1 > pos2 ? p1.getContact() : p2.getContact());
 
-            String contact = p3.getContact();
-            if(p3.getContact() != null) {
-                p3.setContact(contact.substring(0, contact.length() - ("" + rndNumer).length()-1) + rndNumer);
-            }
+            //String contact = p3.getContact();
+           // if(p3.getContact() != null) {
+              //  p3.setContact(contact.substring(0, contact.length() - ("" + rndNumer).length()-1) + rndNumer);
+          //  }
             l1.add(p3);
         }
 

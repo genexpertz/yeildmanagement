@@ -18,7 +18,7 @@ public class WriteSampleData {
     private static final String Availability = "com.expertzlab.yieldmanagement.models.Availability";
     private static final String CompatencyProperty = "com.expertzlab.yieldmanagement.models.CompetantProperty";
     private static final String Owner = "com.expertzlab.yieldmanagement.models.Owner";
-    private static final String OwnerProperty = "com.expertzlabyieldmanagement.models.OwnerProperty";
+    private static final String OwnerProperty = "com.expertzlab.yieldmanagement.models.OwnerProperty";
     private static final String Price = "com.expertzlab.yieldmanagement.models.Price";
     private static final String PropertyManager = "com.expertzlab.yieldmanagement.models.PropertyManager";
 
