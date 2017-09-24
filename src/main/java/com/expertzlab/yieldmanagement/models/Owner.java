@@ -8,6 +8,7 @@ public class Owner {
     String contact;
     String name;
     String address;
+    String managerId;
 
     public int getId() {
         return id;
@@ -15,6 +16,10 @@ public class Owner {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public void setId(String id) {
+        this.id = Integer.parseInt(id);
     }
 
     public String getContact() {
@@ -41,6 +46,15 @@ public class Owner {
         this.address = address;
     }
 
+    public String getManagerId() {
+        return managerId;
+    }
 
+    public void setManagerId(String managerId) {
+        this.managerId = managerId;
+    }
+    public void setPmid(String pmid) {
+        this.managerId = managerId;
+    }
 }
 

@@ -7,6 +7,11 @@ public class OwnerProperty {
     String name;
     String region;
     int propertyId;
+    int ownerId;
+
+    public int getOwnerId() { return ownerId; }
+
+    public void setOwnerId(int ownerId) { this.ownerId = ownerId; }
 
     public String getUrl() {
         return name;
@@ -39,7 +44,9 @@ public class OwnerProperty {
         this.name = name;
     }
 
-    public String getName() {
-        return name;
+    public String getName() { return name; }
+
+    public String toString(){
+        return "name:"+name+",region:" + region+",propId:"+propertyId+",owner-id:"+ownerId;
     }
 }

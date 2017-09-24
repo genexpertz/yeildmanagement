@@ -7,7 +7,7 @@ public class PropertyManager {
     String region;
     String contact;
     String name;
-    int managerId;
+    String managerId;
 
     public String getRegion() {
         return region;
@@ -33,11 +33,15 @@ public class PropertyManager {
         this.name = name;
     }
 
-    public int getManagerId() {
+    public String getManagerId() {
         return managerId;
     }
 
-    public void setManagerId(int managerId) {
+    public void setId(String id){
+        this.managerId = id;
+    }
+
+    public void setManagerId(String managerId) {
         this.managerId = managerId;
     }
 }
