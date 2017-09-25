@@ -1,5 +1,10 @@
-region|name|price
-ekm|cat|1200
-tcr|mat|500
-kkm|colours|688
-kkd|red|900
+name
+cat
+mat
+colours
+red
+rose
+mat
+car
+bike
+orange

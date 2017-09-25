@@ -27,15 +27,17 @@ public class CompatencyPropertyDataWriter extends Thread{
 
         try {
             CompatencyPropertyRandomizer ar = new CompatencyPropertyRandomizer(con);
+
             list = ar.getRandomizedList(list);
             for(Object com :list) {
                 System.out.println("CompetantProperty-"+com);
                 System.out.println("In new thread");
-                PreparedStatement statement = con.prepareStatement("insert into  compatency_property_list values(?,?,?) ");
-                statement.setLong(1,((CompetantProperty)com).getId());
-                statement.setString(2,((CompetantProperty)com).getRegion());
-                statement.setString(3,((CompetantProperty)com).getName());
-                statement.setFloat(4,((CompetantProperty)com).getPrice());
+                PreparedStatement statement = con.prepareStatement("insert into compatency_property_list(cpid,opid,region,name) values(?,?,?,?) " );
+                statement.setLong(1,((CompetantProperty)com).getCpid());
+                statement.setLong(2,((CompetantProperty)com).getOpid());
+                statement.setString(3,((CompetantProperty)com).getRegion());
+                statement.setString(4,((CompetantProperty)com).getName());
+
                 //statement.setLong(3,((Agent)agt).getProjectId());
                 statement.execute();
                 System.out.println("Executed successfully");

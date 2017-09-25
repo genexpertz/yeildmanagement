@@ -62,7 +62,7 @@ public class LoadSampleData {
                 case "com.expertzlab.yieldmanagement.models.CompetantProperty":{
                     ds = new CompatencyPropertyDataSetter(clazz, harray, rArray);
                     com = (CompetantProperty) ds.run();
-                    com.setId(count);
+                   // com.setCpid(count);
                     arrayList.add(com);
                     break;
                 }

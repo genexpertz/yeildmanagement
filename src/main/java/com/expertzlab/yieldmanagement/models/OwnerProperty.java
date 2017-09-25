@@ -13,6 +13,11 @@ public class OwnerProperty {
 
     public void setOwnerId(int ownerId) { this.ownerId = ownerId; }
 
+    public void setOwnid(String ownerId) {
+
+        this.ownerId = Integer.parseInt(ownerId);
+    }
+
     public String getUrl() {
         return name;
     }
@@ -48,5 +53,13 @@ public class OwnerProperty {
 
     public String toString(){
         return "name:"+name+",region:" + region+",propId:"+propertyId+",owner-id:"+ownerId;
+    }
+
+    public void setOpid(String opid){
+        this.propertyId = Integer.parseInt( opid);
+    }
+
+    public void setOpid(long opid){
+        this.propertyId = (int)opid;
     }
 }
