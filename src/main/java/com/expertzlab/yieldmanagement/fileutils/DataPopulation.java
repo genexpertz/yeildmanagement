@@ -40,11 +40,11 @@ public class DataPopulation {
         WriteSampleData wsd = new WriteSampleData(map);
         wsd.writeData();
         Connection con = DBConnectionManager.getConnection();
-        PriceService priceService = new PriceService(con);
+        /*PriceService priceService = new PriceService(con);
         priceService.generatePrices();
 
         AvailabilityService availService = new AvailabilityService(con);
-        availService.generateAvailability();
+        availService.generateAvailability();*/
 
     }
 }
