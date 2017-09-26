@@ -39,10 +39,7 @@ public class WriteSampleData {
 
     void writeData() {
         for (HashMap.Entry<Class, List> entry : map.entrySet()) {
-            if (Availability.equals(entry.getKey())) {
-                AvailabilityDataWriter pdw = new AvailabilityDataWriter(con, entry.getValue());
-                pdw.start();
-            } else if (CompatencyProperty.equals(entry.getKey())) {
+            if (CompatencyProperty.equals(entry.getKey())) {
                 CompatencyPropertyDataWriter adw = new CompatencyPropertyDataWriter(con, entry.getValue());
                 adw.start();
             } else if (Owner.equals(entry.getKey())) {

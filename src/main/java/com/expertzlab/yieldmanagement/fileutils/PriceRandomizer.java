@@ -10,7 +10,7 @@ public class PriceRandomizer {
     int maxOwnerPrice = 15000;
     int threshodForCompProp = 2000;
 
-    Random random = new Random();
+    Random random = new Random(15000);
 
     public PriceRandomizer(){
 
@@ -22,7 +22,11 @@ public class PriceRandomizer {
 
     public int getCompPropPrice(int owerPrice){
         int posORneg = (Math.random() < .5) ? -1 : 1;
-        return owerPrice + posORneg * random.nextInt(threshodForCompProp);
+        int newprice = owerPrice + posORneg * random.nextInt(threshodForCompProp);
+        if(newprice < 0){
+            newprice = newprice * -1 + 2000;
+        }
+        return  newprice;
     }
 
 }

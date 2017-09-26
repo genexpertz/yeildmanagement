@@ -8,6 +8,15 @@ import java.util.Date;
 public class Availability {
     int cpid;
     int opid;
+    int oid;
+
+    public int getOid() {
+        return oid;
+    }
+
+    public void setOid(int oid) {
+        this.oid = oid;
+    }
 
     int Did;
     String status;

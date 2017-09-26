@@ -43,5 +43,8 @@ public class DataPopulation {
         PriceService priceService = new PriceService(con);
         priceService.generatePrices();
 
+        AvailabilityService availService = new AvailabilityService(con);
+        availService.generateAvailability();
+
     }
 }
