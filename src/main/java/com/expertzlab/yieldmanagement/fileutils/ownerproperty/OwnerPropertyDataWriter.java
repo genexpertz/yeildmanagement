@@ -14,7 +14,7 @@ import java.util.List;
  */
 
 
-public class OwnerPropertyDataWriter extends Thread {
+public class OwnerPropertyDataWriter{
     Connection con;
     List<Object> list;
     String pmid;
