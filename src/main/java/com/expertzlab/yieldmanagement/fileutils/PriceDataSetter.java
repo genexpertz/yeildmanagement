@@ -4,6 +4,7 @@ import com.expertzlab.yieldmanagement.models.Price;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.util.Date;
 
 /**
  * Created by expertzlab on 8/11/17.
@@ -18,7 +19,7 @@ public class PriceDataSetter extends DataSetter {
         this.hArray = hArray;
         this.rArray = rArray;
     }
-    public Price run() {
+    public Date run() {
         Price pri =null;
         Class<?> loadedClass = null;
         try {

@@ -4,6 +4,7 @@ import com.expertzlab.yieldmanagement.models.Availability;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.util.Date;
 
 /**
  * Created by expertzlab on 9/6/17.
@@ -19,7 +20,7 @@ public class AvailabilityDataSetter extends DataSetter {
         this.hArray = hArray;
         this.rArray = rArray;
     }
-    public Availability run() {
+    public Date run() {
         Availability ava =null;
         Class<?> loadedClass = null;
         try {

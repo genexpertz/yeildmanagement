@@ -5,6 +5,7 @@ import com.expertzlab.yieldmanagement.models.PropertyManager;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.util.Date;
 
 /**
  * Created by expertzlab on 8/11/17.
@@ -19,7 +20,7 @@ public class PropertyManagerDataSetter extends DataSetter {
         this.hArray = hArray;
         this.rArray = rArray;
     }
-    public PropertyManager run() {
+    public Date run() {
         PropertyManager pmgr =null;
         Class<?> loadedClass = null;
         try {

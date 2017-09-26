@@ -9,7 +9,7 @@ public class YMDate {
     int month;
     int year;
 
-    public int getId() {s
+    public int getId() {
         return id;
     }
 

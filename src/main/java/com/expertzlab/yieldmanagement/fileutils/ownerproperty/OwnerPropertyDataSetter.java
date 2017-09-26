@@ -5,6 +5,7 @@ import com.expertzlab.yieldmanagement.models.OwnerProperty;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.util.Date;
 
 /**
  * Created by expertzlab on 9/6/17.
@@ -19,7 +20,7 @@ public  class OwnerPropertyDataSetter extends DataSetter {
         this.hArray = hArray;
         this.rArray = rArray;
     }
-    public OwnerProperty run() {
+    public Date run() {
 
         OwnerProperty op =null;
         Class<?> loadedClass = null;

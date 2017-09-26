@@ -4,6 +4,7 @@ import com.expertzlab.yieldmanagement.models.CompetantProperty;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.util.Date;
 
 /**
  * Created by expertzlab on 9/6/17.
@@ -18,7 +19,7 @@ public class CompatencyPropertyDataSetter extends DataSetter {
         this.hArray = hArray;
         this.rArray = rArray;
     }
-    public CompetantProperty run() {
+    public Date run() {
         CompetantProperty com =null;
         Class<?> loadedClass = null;
         try {

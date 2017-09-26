@@ -6,11 +6,20 @@ import java.util.Date;
  * Created by expertzlab on 8/11/17.
  */
 public class Price {
+    int oid;
 
     int cpid;
     int opid;
     int Did;
     Float price;
+
+    public int getOid() {
+        return oid;
+    }
+
+    public void setOid(int oid) {
+        this.oid = oid;
+    }
 
     public int getCpid() {
         return cpid;
@@ -43,5 +52,6 @@ public class Price {
     public void setPrice(Float price) {
         this.price = price;
     }
+
 
 }

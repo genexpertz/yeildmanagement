@@ -59,7 +59,12 @@ public class PriceService {
                     YMDate dt = dtDr.get();
 
                     Price price = new Price();
-                    //price.setCpid();
+                    price.setOid(price.getOid());
+                    price.setOpid(price.getOpid());
+                    price.setCpid(price.getCpid());
+                    price.setDid(price.getDid());
+                    price.setPrice(price.getPrice());
+
 
 
 

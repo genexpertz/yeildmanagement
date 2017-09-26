@@ -1,5 +1,6 @@
 package com.expertzlab.yieldmanagement.fileutils.owner;
 
+import com.expertzlab.yieldmanagement.fileutils.DateDataReader;
 import com.expertzlab.yieldmanagement.fileutils.owner.OwnerDataSetter;
 import com.expertzlab.yieldmanagement.models.Owner;
 
@@ -12,6 +13,7 @@ import java.sql.SQLException;
 public class OwnerDataReader {
 
 
+    public static com.expertzlab.yieldmanagement.fileutils.DateDataReader DateDataReader;
     Connection con;
     protected ResultSet res;
 
