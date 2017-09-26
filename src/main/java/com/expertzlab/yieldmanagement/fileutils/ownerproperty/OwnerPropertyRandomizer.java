@@ -23,31 +23,33 @@ public class OwnerPropertyRandomizer {
     int pos2;
     int opId;
 
-    int maxOwnerPropertyCount=10;
-    int recordcount =1;
+    int maxOwnerPropertyCount = 20;
+    int recordcount = 1;
     long lastId = 0;
     Connection con;
 
     OwnerDataReader oDataReader;
 
 
-    public OwnerPropertyRandomizer(Connection con ) throws SQLException {
+    public OwnerPropertyRandomizer(Connection con) throws SQLException {
         this.con = con;
         oDataReader = new OwnerDataReader(con);
         Statement stmt = con.createStatement();
         ResultSet res = stmt.executeQuery("Select max(opid) from owner_property");
-        while (res.next()){
+        while (res.next()) {
             lastId = res.getLong(1);
         }
     }
+
     public List getRandomizedList(List list) throws SQLException {
         List l1 = new ArrayList(recordcount);
         Random r = new Random();
         oDataReader.getAllOwnerList();
+        if (lastId > 0) recordcount += lastId;
         while (oDataReader.hasNext()) {
             Owner o = oDataReader.get();
             int ownerCount = r.nextInt(maxOwnerPropertyCount);
-            for (int i =  0; i < ownerCount; i++) {
+            for (int i = 0; i <= ownerCount; i++) {
 
                 pos1 = r.nextInt(list.size());
                 OwnerProperty p1 = (OwnerProperty) list.get(pos1);
@@ -63,7 +65,7 @@ public class OwnerPropertyRandomizer {
                 l1.add(p3);
                 recordcount++;
             }
-
+            if (recordcount > maxOwnerPropertyCount) break;
         }
         return l1;
     }

@@ -20,7 +20,7 @@ public class OwnerRandomizer {
     int pos2;
     Connection con;
 
-    int maxOwnerCount =10;
+    int maxOwnerCount =20;
     int recordcount = 1;
     long lastId = 0;
     PropertyManagerDataReader pmDataReader;
@@ -41,14 +41,14 @@ public class OwnerRandomizer {
        while(pmDataReader.hasNext()) {
            PropertyManager pm = pmDataReader.get();
            int ownerCount = r.nextInt(maxOwnerCount);
-           for (int i = 0; i < ownerCount; i++) {
+           for (long i = recordcount; i < ownerCount; i++) {
 
                pos1 = r.nextInt(list.size());
                Owner p1 = (Owner) list.get(pos1);
                pos2 = r.nextInt(list.size());
                Owner p2 = (Owner) list.get(pos2);
                Owner p3 = new Owner();
-               p3.setId((int) (recordcount + lastId));
+               p3.setId((int) (i));
                p3.setName(p1.getName() + " " + p2.getName() + r.nextInt(((int) (recordcount + lastId))));
                p3.setAddress(pos1 > pos2 ? p1.getAddress() : p2.getAddress());
                int rndNumer = r.nextInt(99999);
@@ -62,6 +62,7 @@ public class OwnerRandomizer {
                l1.add(p3);
                recordcount++;
            }
+           if(recordcount>= maxOwnerCount) break;
        }
 
         return l1;

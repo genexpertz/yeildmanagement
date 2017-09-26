@@ -5,6 +5,7 @@ import com.expertzlab.yieldmanagement.fileutils.ownerproperty.OwnerPropertyDataR
 import com.expertzlab.yieldmanagement.models.*;
 
 import java.sql.Connection;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
@@ -18,19 +19,23 @@ import java.util.Random;
 public class PriceService {
 
     Connection con;
-    int recordcount =10;
+    int recordcount = 10;
     long lastId = 1;
     OwnerDataReader oDr;
     OwnerPropertyDataReader opDr;
-    CompatencyPropertyDataReader  cpDr;
+    CompatencyPropertyDataReader cpDr;
     DateDataReader dtDr;
+    PriceRandomizer priceRand;
+    PriceDataWriter priceDwr;
 
     public PriceService(Connection con) throws SQLException {
         this.con = con;
         oDr = new OwnerDataReader(con);
         opDr = new OwnerPropertyDataReader(con);
-        cpDr = new   CompatencyPropertyDataReader(con);
+        cpDr = new CompatencyPropertyDataReader(con);
         dtDr = new DateDataReader(con);
+        priceRand = new PriceRandomizer();
+        priceDwr = new PriceDataWriter(con);
     }
 
     public void generatePrices() throws SQLException {
@@ -38,34 +43,46 @@ public class PriceService {
         //Getting owners
         Owner owner = null;
         oDr.getAllOwnerList();
-        while(oDr.hasNext()){
-           owner = oDr.get();
+        while (oDr.hasNext()) {
+            owner = oDr.get();
 
-           //Get owner Property
+            //Get owner Property
             opDr.getAllOwnerPropertyList(owner.getId());
             OwnerProperty ownerProperty = null;
-            while(opDr.hasNext()){
+            while (opDr.hasNext()) {
                 ownerProperty = opDr.get();
 
-                //Get competing Property
-                cpDr.getAllCompatencyPropertyList(owner.getId());
-                CompetantProperty ownercp = null;
-                while(cpDr.hasNext()){
-                    ownercp = cpDr.get();
-
-                    //Get Dates
+                //Get Dates
                 dtDr.getAllDateList();
-                while(dtDr.hasNext()){
+                while (dtDr.hasNext()) {
+
+                    //Setting Owner P price
                     YMDate dt = dtDr.get();
-
                     Price price = new Price();
-                    //price.setCpid();
+                    price.setOid(owner.getId());
+                    price.setOpid(ownerProperty.getPropertyId());
+                    price.setDid(dt.getId());
+                    int ownerPrice = priceRand.getOwnerPrice();
+                    price.setPrice(Float.valueOf(ownerPrice));
+                    priceDwr.execute(price);
 
+                    //Get competing Property
+                    cpDr.getAllCompatencyPropertyList(owner.getId());
+                    CompetantProperty ownercp = null;
+                    while (cpDr.hasNext()) {
+                        ownercp = cpDr.get();
 
+                        //Setting Owner P price
+                        price = new Price();
+                        price.setOid(owner.getId());
+                        //price.setOpid(ownerProperty.getPropertyId());
+                        price.setCpid(ownercp.getCpid());
+                        price.setDid(dt.getId());
+                        int comPropPrice = priceRand.getCompPropPrice(ownerPrice);
+                        price.setPrice(Float.valueOf(comPropPrice));
+                        priceDwr.execute(price);
 
-
-                }
-
+                    }
 
                 }
 

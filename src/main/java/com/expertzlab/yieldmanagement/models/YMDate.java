@@ -9,14 +9,16 @@ public class YMDate {
     int month;
     int year;
 
-    public int getId() {s
+    public int getId() {
         return id;
     }
 
     public void setId(int id) {
         this.id = id;
     }
-
+    public void setId(String id) {
+        this.id = Integer.parseInt(id);
+    }
     public String getDate() {
         return date;
     }
@@ -29,6 +31,10 @@ public class YMDate {
         return month;
     }
 
+    public void setMonth(String month) {
+        this.month = Integer.parseInt( month);
+    }
+
     public void setMonth(int month) {
         this.month = month;
     }
@@ -39,5 +45,9 @@ public class YMDate {
 
     public void setYear(int year) {
         this.year = year;
+    }
+
+    public void setYear(String year) {
+        this.year = Integer.parseInt( year);
     }
 }

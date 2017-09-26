@@ -5,6 +5,7 @@ import com.expertzlab.yieldmanagement.models.Price;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.List;
 
 /**
@@ -13,36 +14,32 @@ import java.util.List;
 
 public class PriceDataWriter extends Thread{
     Connection con;
-    List<Object> list;
 
-
-    public PriceDataWriter(Connection con, List<Object> list)
+    public PriceDataWriter(Connection con)
     {
         this.con = con;
-        this.list = list;
-
     }
-    public void run()
+    public void execute(Price price)
     {
+        String dateInsertSQL = "insert into price_list values(?,?,?,?,?)";
 
         try {
-            PriceService ar = new PriceService(con);
-            list = ar.getRandomizedList(list);
-            for(Object pri :list) {
-                System.out.println("Price -"+pri);
-                System.out.println("In new thread");
-                PreparedStatement statement = con.prepareStatement("insert into price_list(cpid,opid,Did,price) values(?,?,?,?) ");
-                statement.setLong(1,((Price)pri).getCpid());
-                statement.setLong(2,((Price)pri).getOpid());
-                statement.setInt(3,  ((Price)pri).getDid());
-                statement.setFloat(4,((Price)pri).getPrice());
+            PreparedStatement stmt = con.prepareStatement(dateInsertSQL);
+            stmt.setInt(1,price.getOid());
+            stmt.setInt(2,price.getOpid());
+            stmt.setInt(3,price.getCpid());
+            stmt.setInt(4,price.getDid());
+            stmt.setFloat(5,price.getPrice());
+            stmt.execute();
 
-                //statement.setLong(3,((Agent)agt).getProjectId());
-                statement.execute();
-                System.out.println("Executed successfully");
+            if(price.getOpid() < 1) {
+                System.out.println("Writing Price "+price.getPrice()+" for Comp pro " + price.getCpid());
+            } else {
+                System.out.println("Writing Price "+price.getPrice()+" for Own pro "+ price.getOpid());
             }
+
         } catch (SQLException e) {
-            e.printStackTrace();
+            System.out.println("Error in writing Price");
         }
     }
 }
