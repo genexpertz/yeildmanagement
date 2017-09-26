@@ -2,11 +2,9 @@ package com.expertzlab.yieldmanagement.fileutils;
 
 import com.expertzlab.yieldmanagement.fileutils.PriceDataSetter;
 import com.expertzlab.yieldmanagement.models.Price;
+import com.expertzlab.yieldmanagement.models.YMDate;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 
 /**
  * Created by expertzlab on 9/25/17.
@@ -41,14 +39,9 @@ public class DateDataReader {
         System.out.println("Executed successfully");
     }
 
-    public Price get() throws SQLException {
-        String[] hArray = prepareParticipantHeaderArray();
-        String[] rArray = new String[10];
-
-        OwnerRecordArray(rArray,res);
-        PriceDataSetter eds = new PriceDataSetter(Price.class,hArray,rArray);
-        Price pri = eds.run();
-        return pri;
+    public YMDate get() throws SQLException {
+       //DateDataSetter
+        return null;
     }
 
 
