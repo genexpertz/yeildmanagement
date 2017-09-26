@@ -33,8 +33,9 @@ public class OwnerPropertyDataReader {
 
         this.con = con;
     }
-    public void getAllOwnerPropertyList() throws SQLException {
-        PreparedStatement statement = con.prepareStatement("select * from owner_property");
+    public void getAllOwnerPropertyList(int ownerId) throws SQLException {
+        PreparedStatement statement = con.prepareStatement("select * from owner_property where ownerid=?");
+        statement.setInt(1,ownerId);
         res = statement.executeQuery();
     }
 

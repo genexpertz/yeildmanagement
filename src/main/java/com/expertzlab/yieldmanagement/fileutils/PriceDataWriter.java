@@ -3,7 +3,6 @@ package com.expertzlab.yieldmanagement.fileutils;
 import com.expertzlab.yieldmanagement.models.Price;
 
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.List;
@@ -27,7 +26,7 @@ public class PriceDataWriter extends Thread{
     {
 
         try {
-            PriceRandomizer ar = new PriceRandomizer(con);
+            PriceService ar = new PriceService(con);
             list = ar.getRandomizedList(list);
             for(Object pri :list) {
                 System.out.println("Price -"+pri);
