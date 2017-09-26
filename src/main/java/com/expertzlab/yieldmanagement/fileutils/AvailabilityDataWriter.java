@@ -31,10 +31,10 @@ public class AvailabilityDataWriter extends Thread{
             for(Object ava :list) {
                 System.out.println("Availability -"+ava);
                 System.out.println("In new thread");
-                PreparedStatement statement = con.prepareStatement("insert into availability_list values(?,?,?,?,?) ");
-                statement.setString(1, (String) ((Availability)ava).getDate());
-                statement.setString(2,((Availability)ava).getRegion());
-                statement.setString(3,((Availability)ava).getAvailablity());
+                PreparedStatement statement = con.prepareStatement("insert into availability_list(cpid,opid,Did,status) values(?,?,?,?) ");
+                statement.setLong(1, ( ((Availability)ava).getCpid());
+                statement.setLong(2,((Availability)ava).getOpid());
+                statement.setLong(3,((Availability)ava).getDid());
                 statement.setString(4,((Availability)ava).getStatus());
                 //statement.setLong(3,((Agent)agt).getProjectId());
                 statement.execute();

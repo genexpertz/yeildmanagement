@@ -85,7 +85,7 @@ public class LoadSampleData {
                 case "com.expertzlab.yieldmanagement.models.price": {
                     ds = new PriceDataSetter(clazz, harray, rArray);
                     pri = (Price) ds.run();
-                    pri.setPropertyId();
+                    //pri.setPropertyId();
                     arrayList.add(pri);
                     break;
                 }

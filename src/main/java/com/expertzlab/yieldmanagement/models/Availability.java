@@ -6,21 +6,34 @@ import java.util.Date;
  * Created by expertzlab on 8/11/17.
  */
 public class Availability {
-    String region;
-    String date;
-    String availablity;
+    int cpid;
+    int opid;
+
+    int Did;
     String status;
 
-    public String getAvailablity() {
-        return availablity;
+    public int getCpid() {
+        return cpid;
     }
 
-    public void setAvailablity(String availablity) {
-        this.availablity = availablity;
+    public void setCpid(int cpid) {
+        this.cpid = cpid;
     }
 
-    public String getRegion() {
-        return region;
+    public int getOpid() {
+        return opid;
+    }
+
+    public void setOpid(int opid) {
+        this.opid = opid;
+    }
+
+    public int getDid() {
+        return Did;
+    }
+
+    public void setDid(int did) {
+        Did = did;
     }
 
     public String getStatus() {
@@ -31,18 +44,4 @@ public class Availability {
         this.status = status;
     }
 
-    public void setRegion(String region) {
-        this.region = region;
-    }
-
-    public String getDate() {
-        return date;
-    }
-
-    public void setDate(String date) {
-        this.date = date;
-    }
-
-    public void setDate() {
-    }
 }
