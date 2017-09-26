@@ -4,6 +4,7 @@ package com.expertzlab.yieldmanagement.fileutils;
 import com.expertzlab.yieldmanagement.fileutils.owner.OwnerDataWriter;
 import com.expertzlab.yieldmanagement.fileutils.propertymanager.PropertyManagerDataWriter;
 import com.expertzlab.yieldmanagement.fileutils.ownerproperty.OwnerPropertyDataWriter;
+import com.expertzlab.yieldmanagement.genutils.DBConnectionManager;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -32,16 +33,13 @@ public class WriteSampleData {
 
    public WriteSampleData(Map<Class,List> map) throws SQLException {
 
-        this.con = DriverManager.getConnection("jdbc:mysql://localhost:3306/yieldmanagement", "root", "senil");
+        this.con = DBConnectionManager.getConnection();
         this.map = map;
     }
 
     void writeData() {
         for (HashMap.Entry<Class, List> entry : map.entrySet()) {
-            if (Availability.equals(entry.getKey())) {
-                AvailabilityDataWriter pdw = new AvailabilityDataWriter(con, entry.getValue());
-                pdw.start();
-            } else if (CompatencyProperty.equals(entry.getKey())) {
+            if (CompatencyProperty.equals(entry.getKey())) {
                 CompatencyPropertyDataWriter adw = new CompatencyPropertyDataWriter(con, entry.getValue());
                 adw.start();
             } else if (Owner.equals(entry.getKey())) {
@@ -50,10 +48,6 @@ public class WriteSampleData {
             }else if (OwnerProperty.equals(entry.getKey())) {
                 OwnerPropertyDataWriter prodw = new OwnerPropertyDataWriter(con, entry.getValue());
                 prodw.start();
-            }
-            else if (Price.equals(entry.getKey())) {
-                PriceDataWriter cdw = new PriceDataWriter(con, entry.getValue());
-                cdw.start();
             }
             else if (PropertyManager.equals(entry.getKey())){
                 PropertyManagerDataWriter pmdw = new PropertyManagerDataWriter(con,entry.getValue());

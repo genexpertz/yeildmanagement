@@ -34,8 +34,9 @@ public class CompatencyPropertyDataReader {
 
         this.con = con;
     }
-    public void getAllCompatencyPropertyList() throws SQLException {
-        PreparedStatement statement = con.prepareStatement("select * from compatency_property_list");
+    public void getAllCompatencyPropertyList(int ownerPropId) throws SQLException {
+        PreparedStatement statement = con.prepareStatement("select * from compatency_property_list where opid=?");
+        statement.setInt(1,ownerPropId);
         res = statement.executeQuery();
     }
 

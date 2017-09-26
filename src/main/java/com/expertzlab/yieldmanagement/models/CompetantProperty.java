@@ -16,7 +16,13 @@ public class CompetantProperty {
     public void setCpid(int cpid) {
         this.cpid = cpid;
     }
+    public void setCpid(String cpid) {
+        this.cpid = Integer.parseInt( cpid);
+    }
 
+    public void setOpid(String opid) {
+        this.opid = Integer.parseInt( opid);
+    }
     public int getOpid() {
         return opid;
     }

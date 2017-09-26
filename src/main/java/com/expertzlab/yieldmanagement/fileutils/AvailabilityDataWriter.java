@@ -1,6 +1,7 @@
 package com.expertzlab.yieldmanagement.fileutils;
 
 import com.expertzlab.yieldmanagement.models.Availability;
+import sun.security.x509.AVA;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -16,33 +17,30 @@ public class AvailabilityDataWriter extends Thread{
     List<Object> list;
 
 
-    public AvailabilityDataWriter(Connection con, List<Object> list)
-    {
+    public AvailabilityDataWriter(Connection con) {
         this.con = con;
-        this.list = list;
 
     }
-    public void run()
-    {
+    public void execute(Availability avail) {
+        String dateInsertSQL = "insert into availability_list values(?,?,?,?,?)";
 
         try {
-            AvailabilityRandomizer ar = new AvailabilityRandomizer(con);
-            list = ar.getRandomizedList(list);
-            for(Object ava :list) {
-                System.out.println("Availability -"+ava);
-                System.out.println("In new thread");
-                PreparedStatement statement = con.prepareStatement("insert into availability_list(cpid,opid,Did,status) values(?,?,?,?) ");
-                statement.setLong(1, ( ((Availability)ava).getCpid()));
-                statement.setLong(2,((Availability)ava).getOpid());
-                statement.setLong(3,((Availability)ava).getDid());
-                statement.setString(4,((Availability)ava).getStatus());
-                //statement.setLong(3,((Agent)agt).getProjectId());
-                statement.execute();
+            PreparedStatement stmt = con.prepareStatement(dateInsertSQL);
+            stmt.setInt(1,avail.getOid());
+            stmt.setInt(2,avail.getOpid());
+            stmt.setInt(3,avail.getCpid());
+            stmt.setInt(4,avail.getDid());
+            stmt.setString(5,avail.getStatus());
+            stmt.execute();
 
-                System.out.println("Executed successfully");
+            if(avail.getOpid() < 1) {
+                System.out.println("Writing book status "+avail.getStatus()+" for Comp pro " );
+            } else {
+                System.out.println("Writing book status "+avail.getStatus()+" for Own pro ");
             }
+
         } catch (SQLException e) {
-            e.printStackTrace();
+            System.out.println("Error in writing Availability");
         }
     }
 }

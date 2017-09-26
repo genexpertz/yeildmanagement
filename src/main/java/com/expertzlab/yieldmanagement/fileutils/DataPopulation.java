@@ -1,5 +1,7 @@
 package com.expertzlab.yieldmanagement.fileutils;
 
+import com.expertzlab.yieldmanagement.genutils.DBConnectionManager;
+
 import java.io.File;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
@@ -25,6 +27,9 @@ public class DataPopulation {
         {
             String line = s.nextLine();
             String[] strArray = line.split("=");
+            if(strArray[0].startsWith("#")){
+                continue;
+            }
             Class clazz = Class.forName(strArray[0]);
             LoadSampleData ld = new LoadSampleData(strArray[1],clazz);
             List list = ld.loadData();
@@ -34,6 +39,12 @@ public class DataPopulation {
         }
         WriteSampleData wsd = new WriteSampleData(map);
         wsd.writeData();
+        Connection con = DBConnectionManager.getConnection();
+        PriceService priceService = new PriceService(con);
+        priceService.generatePrices();
+
+        AvailabilityService availService = new AvailabilityService(con);
+        availService.generateAvailability();
 
     }
 }

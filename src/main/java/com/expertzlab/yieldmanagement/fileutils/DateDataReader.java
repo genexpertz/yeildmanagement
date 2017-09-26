@@ -1,12 +1,12 @@
 package com.expertzlab.yieldmanagement.fileutils;
 
 import com.expertzlab.yieldmanagement.fileutils.PriceDataSetter;
+import com.expertzlab.yieldmanagement.fileutils.owner.OwnerDataSetter;
+import com.expertzlab.yieldmanagement.models.Owner;
 import com.expertzlab.yieldmanagement.models.Price;
+import com.expertzlab.yieldmanagement.models.YMDate;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 
 /**
  * Created by expertzlab on 9/25/17.
@@ -41,31 +41,32 @@ public class DateDataReader {
         System.out.println("Executed successfully");
     }
 
-    public Price get() throws SQLException {
-        String[] hArray = prepareParticipantHeaderArray();
-        String[] rArray = new String[10];
+    public YMDate get() throws SQLException {
 
-        OwnerRecordArray(rArray,res);
-        PriceDataSetter eds = new PriceDataSetter(Price.class,hArray,rArray);
-        Price pri = eds.run();
-        return pri;
+        String[] hArray = prepareDateHeaderArray();
+        String[] rArray = new String[4];
+
+        dateRecordArray(rArray,res);
+        DateDataSetter dds = new DateDataSetter(YMDate.class,hArray,rArray);
+        YMDate date = dds.run();
+        return date;
     }
 
 
-    private void OwnerRecordArray(String[] rArray, ResultSet res) throws SQLException {
-        rArray[0] = String.valueOf(res.getInt(1));
-        rArray[1] = String.valueOf(res.getDate(2));
-        rArray[2] = String.valueOf(res.getInt(3));
-        rArray[3] = String.valueOf(res.getInt(4));
+    private void dateRecordArray(String[] rArray, ResultSet res) throws SQLException {
+        rArray[0] = res.getString("id");
+        rArray[1] = res.getString("date");
+        rArray[2] = res.getString("year");
+        rArray[3] = res.getString("month");
 
     }
 
-    private String[] prepareParticipantHeaderArray(){
+    private String[] prepareDateHeaderArray(){
         String[] hArray = new String[4];
         hArray[0]= "id";
         hArray[1]="date";
-        hArray[2]="month";
-        hArray[3]="year";
+        hArray[2]="year";
+        hArray[3]="month";
         return  hArray;
     }
 }

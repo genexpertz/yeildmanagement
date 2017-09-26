@@ -7,6 +7,7 @@ import java.util.Date;
  */
 public class Price {
 
+    int oid;
     int cpid;
     int opid;
     int Did;
@@ -44,4 +45,11 @@ public class Price {
         this.price = price;
     }
 
+    public int getOid() {
+        return oid;
+    }
+
+    public void setOid(int oid) {
+        this.oid = oid;
+    }
 }
