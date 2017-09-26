@@ -6,24 +6,34 @@ import java.util.Date;
  * Created by expertzlab on 8/11/17.
  */
 public class Price {
-    Date date;
-    int propertyId;
+
+    int cpid;
+    int opid;
+    int Did;
     Float price;
 
-    public Date getDate() {
-        return date;
+    public int getCpid() {
+        return cpid;
     }
 
-    public void setDate(Date date) {
-        this.date = date;
+    public void setCpid(int cpid) {
+        this.cpid = cpid;
     }
 
-    public int getPropertyId() {
-        return propertyId;
+    public int getOpid() {
+        return opid;
     }
 
-    public void setPropertyId(int propertyId) {
-        this.propertyId = propertyId;
+    public void setOpid(int opid) {
+        this.opid = opid;
+    }
+
+    public int getDid() {
+        return Did;
+    }
+
+    public void setDid(int did) {
+        Did = did;
     }
 
     public Float getPrice() {
@@ -34,6 +44,4 @@ public class Price {
         this.price = price;
     }
 
-    public void setPropertyId() {
-    }
 }

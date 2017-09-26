@@ -32,10 +32,11 @@ public class PriceDataWriter extends Thread{
             for(Object pri :list) {
                 System.out.println("Price -"+pri);
                 System.out.println("In new thread");
-                PreparedStatement statement = con.prepareStatement("insert into price values(?,?) ");
-                statement.setLong(1,((Price)pri).getPropertyId());
-                statement.setDate(2, (Date) ((Price)pri).getDate());
-                statement.setFloat(3,((Price)pri).getPrice());
+                PreparedStatement statement = con.prepareStatement("insert into price_list(cpid,opid,Did,price) values(?,?,?,?) ");
+                statement.setLong(1,((Price)pri).getCpid());
+                statement.setLong(2,((Price)pri).getOpid());
+                statement.setInt(3,  ((Price)pri).getDid());
+                statement.setFloat(4,((Price)pri).getPrice());
 
                 //statement.setLong(3,((Agent)agt).getProjectId());
                 statement.execute();
