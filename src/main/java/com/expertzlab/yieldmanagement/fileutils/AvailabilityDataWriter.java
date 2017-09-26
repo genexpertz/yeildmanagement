@@ -12,7 +12,7 @@ import java.util.List;
  * Created by expertzlab on 9/6/17.
  */
 
-public class AvailabilityDataWriter extends Thread{
+public class AvailabilityDataWriter{
     Connection con;
     List<Object> list;
 

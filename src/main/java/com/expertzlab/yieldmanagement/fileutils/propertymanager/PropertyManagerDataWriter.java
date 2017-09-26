@@ -11,7 +11,7 @@ import java.util.List;
  * Created by expertzlab on 8/16/17.
  */
 
-public class PropertyManagerDataWriter extends Thread{
+public class PropertyManagerDataWriter{
     Connection con;
     List<Object> list;
 

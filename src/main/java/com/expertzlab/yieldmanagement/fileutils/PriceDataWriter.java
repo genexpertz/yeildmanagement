@@ -12,7 +12,7 @@ import java.util.List;
  * Created by expertzlab on 8/16/17.
  */
 
-public class PriceDataWriter extends Thread{
+public class PriceDataWriter{
     Connection con;
 
     public PriceDataWriter(Connection con)

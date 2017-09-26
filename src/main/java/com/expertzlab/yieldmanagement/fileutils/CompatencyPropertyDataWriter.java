@@ -11,7 +11,7 @@ import java.util.List;
  * Created by expertzlab on 9/6/17.
  */
 
-public class CompatencyPropertyDataWriter extends Thread{
+public class CompatencyPropertyDataWriter{
     Connection con;
     List<Object> list;
 
