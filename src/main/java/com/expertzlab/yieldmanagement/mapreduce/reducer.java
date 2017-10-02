@@ -34,4 +34,3 @@ public class reducer extends Reducer<Text,Text,Text,Text> {
             }
         }
     }
-}
