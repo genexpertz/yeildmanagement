@@ -44,4 +44,7 @@ public class PropertyManager {
     public void setManagerId(String managerId) {
         this.managerId = managerId;
     }
+    public void setManagerId(int managerId) {
+        this.managerId = String.valueOf( managerId);
+    }
 }

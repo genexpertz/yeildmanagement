@@ -1,17 +1,12 @@
 package com.expertzlab.yieldmanagement.fileutils;
 
+import com.expertzlab.yieldmanagement.fileutils.competingproperty.CompatencyPropertyDataReader;
 import com.expertzlab.yieldmanagement.fileutils.owner.OwnerDataReader;
 import com.expertzlab.yieldmanagement.fileutils.ownerproperty.OwnerPropertyDataReader;
 import com.expertzlab.yieldmanagement.models.*;
 
 import java.sql.Connection;
-import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.Random;
 
 /**
  * Created by expertzlab on 9/6/17.
@@ -54,14 +49,15 @@ public class PriceService {
 
                 //Get Dates
                 dtDr.getAllDateList();
+                Price price = new Price();
                 while (dtDr.hasNext()) {
 
                     //Setting Owner P price
                     YMDate dt = dtDr.get();
-                    Price price = new Price();
                     price.setOid(owner.getId());
                     price.setOpid(ownerProperty.getPropertyId());
                     price.setDid(dt.getId());
+                    price.setCpid(0);
                     int ownerPrice = priceRand.getOwnerPrice();
                     price.setPrice(Float.valueOf(ownerPrice));
                     priceDwr.execute(price);
@@ -73,9 +69,8 @@ public class PriceService {
                         ownercp = cpDr.get();
 
                         //Setting Owner P price
-                        price = new Price();
                         price.setOid(owner.getId());
-                        //price.setOpid(ownerProperty.getPropertyId());
+                        price.setOpid(0);
                         price.setCpid(ownercp.getCpid());
                         price.setDid(dt.getId());
                         int comPropPrice = priceRand.getCompPropPrice(ownerPrice);

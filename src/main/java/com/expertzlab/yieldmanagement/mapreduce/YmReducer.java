@@ -13,7 +13,7 @@ import java.io.IOException;
 /**
  * Created by eldho541 on 22/9/17.
  */
-public class reducer extends Reducer<Text,Text,Text,Text> {
+public class YmReducer extends org.apache.hadoop.mapreduce.Reducer<Text,Text,Text,Text> {
 
 
         public void reduce(Text key, Iterable<FloatWritable> valueList,
@@ -23,7 +23,7 @@ public class reducer extends Reducer<Text,Text,Text,Text> {
                 int count = 0;
                 for (FloatWritable var : valueList) {
                     total += var.get();
-                    System.out.println("reducer " + var.get());
+                    System.out.println("YmReducer " + var.get());
                     count++;
                 }
                 Float avg = (Float) total / count;
@@ -34,4 +34,3 @@ public class reducer extends Reducer<Text,Text,Text,Text> {
             }
         }
     }
-}

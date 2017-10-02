@@ -18,6 +18,7 @@ import java.util.Scanner;
  * Created by gireeshbabu on 10/08/17.
  */
 public class DataPopulation {
+
     static Map map = new LinkedHashMap();
     static File file;
 

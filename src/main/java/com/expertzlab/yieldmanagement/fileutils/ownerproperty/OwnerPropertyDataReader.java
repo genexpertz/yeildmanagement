@@ -51,7 +51,7 @@ public class OwnerPropertyDataReader {
 
     public OwnerProperty get() throws SQLException {
         String[] hArray = prepareParticipantHeaderArray();
-        String[] rArray = new String[10];
+        String[] rArray = new String[4];
 
         OwnerPropertyRecordArray(rArray,res);
         OwnerPropertyDataSetter eds = new OwnerPropertyDataSetter(OwnerProperty.class,hArray,rArray);

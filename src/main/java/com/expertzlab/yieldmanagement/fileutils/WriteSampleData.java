@@ -1,13 +1,13 @@
 package com.expertzlab.yieldmanagement.fileutils;
 
 
+import com.expertzlab.yieldmanagement.fileutils.competingproperty.CompatencyPropertyDataWriter;
 import com.expertzlab.yieldmanagement.fileutils.owner.OwnerDataWriter;
 import com.expertzlab.yieldmanagement.fileutils.propertymanager.PropertyManagerDataWriter;
 import com.expertzlab.yieldmanagement.fileutils.ownerproperty.OwnerPropertyDataWriter;
 import com.expertzlab.yieldmanagement.genutils.DBConnectionManager;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.List;

@@ -1,5 +1,6 @@
-package com.expertzlab.yieldmanagement.fileutils;
+package com.expertzlab.yieldmanagement.fileutils.competingproperty;
 
+import com.expertzlab.yieldmanagement.fileutils.CountConfig;
 import com.expertzlab.yieldmanagement.fileutils.ownerproperty.OwnerPropertyDataReader;
 import com.expertzlab.yieldmanagement.models.CompetantProperty;
 import com.expertzlab.yieldmanagement.models.OwnerProperty;
@@ -20,7 +21,7 @@ public class CompatencyPropertyRandomizer {
     int pos2;
     Connection con;
 
-    int maxCompatencyPropertyCount = 1000000;
+    int maxCompatencyPropertyCount = CountConfig.COMPETING_PROPERTY_COUNT;
     int recordcount = 1;
     long lastId = 0;
     OwnerPropertyDataReader opDataReader;

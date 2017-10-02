@@ -1,4 +1,4 @@
-package com.expertzlab.yieldmanagement.fileutils;
+package com.expertzlab.yieldmanagement.fileutils.competingproperty;
 
 import com.expertzlab.yieldmanagement.models.CompetantProperty;
 
@@ -42,6 +42,8 @@ public class CompatencyPropertyDataWriter{
                 statement.execute();
                 System.out.println("Executed successfully");
             }
+            list.clear();
+            list = null;
         } catch (SQLException e) {
             e.printStackTrace();
         }
