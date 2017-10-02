@@ -18,7 +18,7 @@ public class PropertyManagerRandomizer {
     int pos2;
     String pmIdGen;
 
-    int recordcount =100;
+    int recordcount =1000;
     long lastId = 0;
 
     public PropertyManagerRandomizer(Connection con ) throws SQLException {

@@ -20,7 +20,7 @@ public class CompatencyPropertyRandomizer {
     int pos2;
     Connection con;
 
-    int maxCompatencyPropertyCount = 20;
+    int maxCompatencyPropertyCount = 1000000;
     int recordcount = 1;
     long lastId = 0;
     OwnerPropertyDataReader opDataReader;

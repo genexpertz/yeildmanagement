@@ -23,7 +23,7 @@ public class OwnerPropertyRandomizer {
     int pos2;
     int opId;
 
-    int maxOwnerPropertyCount = 20;
+    int maxOwnerPropertyCount = 100000;
     int recordcount = 1;
     long lastId = 0;
     Connection con;

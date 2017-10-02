@@ -25,7 +25,7 @@ public class OwnerDataSetter extends DataSetter {
         try {
             //loadedClass = Class.forName(clazz.getName());
             own = (Owner) clazz.newInstance();
-            for(int i = 0; i< hArray.length; i++) {
+            for(int i = 0; i< rArray.length; i++) {
 
                 Method m = clazz.getMethod("set" +capitalizeFirstLetter( hArray[i]), String.class);
                 m.invoke(own, rArray[i]);

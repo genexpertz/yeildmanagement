@@ -20,7 +20,7 @@ public class OwnerRandomizer {
     int pos2;
     Connection con;
 
-    int maxOwnerCount =20;
+    int maxOwnerCount =10000;
     int recordcount = 1;
     long lastId = 0;
     PropertyManagerDataReader pmDataReader;
