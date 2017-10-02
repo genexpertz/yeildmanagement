@@ -37,8 +37,7 @@ public class Driver {
         Job job1 = new Job(conf,"step1");
         job1.setJarByClass(Driver.class);
         job1.setMapperClass(YmMapper.class);
-        job1.setNumReduceTasks(0);
-        //job1.setReducerClass(YmReducer.class);
+        job1.setReducerClass(YmReducer.class);
 
         job1.setMapOutputKeyClass(Text.class);
         job1.setOutputValueClass(Text.class);

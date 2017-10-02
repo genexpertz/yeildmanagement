@@ -65,14 +65,14 @@ public class YmMapper extends org.apache.hadoop.mapreduce.Mapper<LongWritable,Te
 
             String status=stringTokenizer.nextToken();
             //String avilability=stringTokenizer.nextToken();
-            context.write(date_id,new Text("oid="+oid+"cid"+cid+"status"+status));
-            System.out.println("show"+date_id+"oid="+oid+",cid"+cid+"status"+status);
+            context.write(date_id,new Text("oid="+oid+"cpid"+cid+"cpbs"+status));
+            System.out.println("show"+date_id+"oid="+oid+",cpid"+cid+"cpbs"+status);
         }
         else if(filename.contains("/date"))
         {
             date_id = new Text(stringTokenizer.nextToken());
             String date=stringTokenizer.nextToken();
-            context.write(date_id,new Text("Date="+date));
+            context.write(date_id,new Text("date="+date));
             System.out.println("show"+date_id+"Date="+date);
 
         }
