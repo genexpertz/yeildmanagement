@@ -51,22 +51,20 @@ public class YmMapper extends org.apache.hadoop.mapreduce.Mapper<LongWritable,Te
 
         else if (filename.contains("/avilability"))
         {
+            int oid = Integer.parseInt(stringTokenizer.nextToken());
+            int opid=Integer.parseInt(stringTokenizer.nextToken());
+            int cpid=Integer.parseInt(stringTokenizer.nextToken());
             date_id = new Text(stringTokenizer.nextToken());
-            int oid=Integer.parseInt(stringTokenizer.nextToken());
-            int cid=Integer.parseInt(stringTokenizer.nextToken());
-            /*int a= Integer.parseInt(stringTokenizer.nextToken());
-            {
-                if(a == 1) {
-                    Boolean status = true;
-                }
-                else {
-                    Boolean status = false;
-                }*/
-
-            String status=stringTokenizer.nextToken();
-            //String avilability=stringTokenizer.nextToken();
-            context.write(date_id,new Text("oid="+oid+"cpid"+cid+"cpbs"+status));
-            System.out.println("show"+date_id+"oid="+oid+",cpid"+cid+"cpbs"+status);
+            int opbs, cpbs;
+            if(opid > 0) {
+                opbs = (int) Float.parseFloat(stringTokenizer.nextToken());
+                context.write(date_id,new Text("oid="+oid+",opid="+opid+",opbs="+opbs));
+                System.out.println("show:"+date_id+",oid="+oid+",opid="+opid+",opbs="+opbs);
+            } else {
+                cpbs = (int) Float.parseFloat(stringTokenizer.nextToken());
+                context.write(date_id,new Text("oid="+oid+",cpid="+cpid+",cpbs="+cpbs));
+                System.out.println("show:"+date_id+",oid="+oid+",cpid="+cpid+",cpbs="+cpbs);
+            }
         }
         else if(filename.contains("/date"))
         {

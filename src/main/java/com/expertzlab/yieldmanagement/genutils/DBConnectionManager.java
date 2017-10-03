@@ -10,6 +10,6 @@ import java.sql.SQLException;
 public class DBConnectionManager {
 
     public static Connection getConnection() throws SQLException {
-        return DriverManager.getConnection("jdbc:mysql://localhost:3306/yieldmanagement", "root", "root123");
+        return DriverManager.getConnection("jdbc:mysql://localhost:3306/yieldmanagement", "root", "senil");
     }
 }
