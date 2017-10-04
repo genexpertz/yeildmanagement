@@ -39,6 +39,7 @@ public class YmMapperTest {
     @Test
     public void testYmMapper() throws IOException, InterruptedException {
         setUp();
+        //oid,opid,cpid,did,price
         value = new Text("1,6,1,198,14368.0");
        ymMapper.setup(context);
         ymMapper.map(key,value,context);

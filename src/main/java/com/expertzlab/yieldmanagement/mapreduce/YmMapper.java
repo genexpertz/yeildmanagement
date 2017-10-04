@@ -38,30 +38,30 @@ public class YmMapper extends org.apache.hadoop.mapreduce.Mapper<LongWritable,Te
             int cpid=Integer.parseInt(stringTokenizer.nextToken());
             date_id = new Text(stringTokenizer.nextToken());
             int opp, cpp;
-            if(opid > 0) {
+            if(isOwnerProperty(cpid)) {
                 opp = (int) Float.parseFloat(stringTokenizer.nextToken());
                 context.write(date_id,new Text("oid="+oid+",opid="+opid+",opp="+opp));
                 System.out.println("show:"+date_id+",oid="+oid+",opid="+opid+",opp="+opp);
             } else {
                 cpp = (int) Float.parseFloat(stringTokenizer.nextToken());
-                context.write(date_id,new Text("oid="+oid+",cpid="+cpid+",cpp="+cpp));
-                System.out.println("show:"+date_id+",oid="+oid+",cpid="+cpid+",cpp="+cpp);
+                context.write(date_id,new Text("oid="+oid+",opid="+opid+",cpid="+cpid+",cpp="+cpp));
+                System.out.println("show:"+date_id+",oid="+oid+",opid="+opid+",cpid="+cpid+",cpp="+cpp);
             }
         }
 
-        else if (filename.contains("/avilability"))
+        else if (filename.contains("/availability"))
         {
             int oid = Integer.parseInt(stringTokenizer.nextToken());
             int opid=Integer.parseInt(stringTokenizer.nextToken());
             int cpid=Integer.parseInt(stringTokenizer.nextToken());
             date_id = new Text(stringTokenizer.nextToken());
-            int opbs, cpbs;
+            String opbs, cpbs;
             if(opid > 0) {
-                opbs = (int) Float.parseFloat(stringTokenizer.nextToken());
+                opbs = stringTokenizer.nextToken();
                 context.write(date_id,new Text("oid="+oid+",opid="+opid+",opbs="+opbs));
                 System.out.println("show:"+date_id+",oid="+oid+",opid="+opid+",opbs="+opbs);
             } else {
-                cpbs = (int) Float.parseFloat(stringTokenizer.nextToken());
+                cpbs = stringTokenizer.nextToken();
                 context.write(date_id,new Text("oid="+oid+",cpid="+cpid+",cpbs="+cpbs));
                 System.out.println("show:"+date_id+",oid="+oid+",cpid="+cpid+",cpbs="+cpbs);
             }
@@ -74,5 +74,9 @@ public class YmMapper extends org.apache.hadoop.mapreduce.Mapper<LongWritable,Te
             System.out.println("show"+date_id+"Date="+date);
 
         }
+    }
+
+    private boolean isOwnerProperty(int cpid) {
+        return cpid == 0;
     }
 }

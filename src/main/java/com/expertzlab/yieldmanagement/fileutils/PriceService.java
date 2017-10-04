@@ -70,7 +70,7 @@ public class PriceService {
 
                         //Setting Owner P price
                         price.setOid(owner.getId());
-                        price.setOpid(0);
+                        price.setOpid(ownerProperty.getPropertyId());
                         price.setCpid(ownercp.getCpid());
                         price.setDid(dt.getId());
                         int comPropPrice = priceRand.getCompPropPrice(ownerPrice);
