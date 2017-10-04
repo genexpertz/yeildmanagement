@@ -41,7 +41,7 @@ public class OwnerDataReader {
 
     public Owner get() throws SQLException {
         String[] hArray = prepareParticipantHeaderArray();
-        String[] rArray = new String[10];
+        String[] rArray = new String[4];
 
         OwnerRecordArray(rArray,res);
         OwnerDataSetter eds = new OwnerDataSetter(Owner.class,hArray,rArray);

@@ -1,5 +1,6 @@
 package com.expertzlab.yieldmanagement.fileutils.propertymanager;
 
+import com.expertzlab.yieldmanagement.fileutils.CountConfig;
 import com.expertzlab.yieldmanagement.models.PropertyManager;
 
 import java.sql.Connection;
@@ -18,7 +19,7 @@ public class PropertyManagerRandomizer {
     int pos2;
     String pmIdGen;
 
-    int recordcount =100;
+    int recordcount = CountConfig.PROPERTY_MANAGER_COUNT;
     long lastId = 0;
 
     public PropertyManagerRandomizer(Connection con ) throws SQLException {
@@ -44,8 +45,8 @@ public class PropertyManagerRandomizer {
                 throw new RuntimeException("Not enough value in the list");
             }
             PropertyManager p3 = new PropertyManager();
-            pmIdGen = "PM" + i;
-            p3.setManagerId(pmIdGen);
+            //pmIdGen = "PM" + i;
+            p3.setManagerId((int)i);
             p3.setName(p1.getName() + " " + p2.getName() + r.nextInt(((int)(recordcount+lastId))));
             p3.setRegion(pos1 > pos2 ? p1.getRegion() : p2.getRegion());
             int rndNumer = r.nextInt(99999);

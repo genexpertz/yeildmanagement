@@ -1,12 +1,10 @@
-package com.expertzlab.yieldmanagement.fileutils;
+package com.expertzlab.yieldmanagement.fileutils.competingproperty;
 
 /**
  * Created by expertzlab on 9/25/17.
  */
 
-import com.expertzlab.yieldmanagement.fileutils.propertymanager.PropertyManagerDataSetter;
 import com.expertzlab.yieldmanagement.models.CompetantProperty;
-import com.expertzlab.yieldmanagement.models.PropertyManager;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

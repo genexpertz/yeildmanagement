@@ -1,5 +1,6 @@
 package com.expertzlab.yieldmanagement.fileutils.owner;
 
+import com.expertzlab.yieldmanagement.fileutils.CountConfig;
 import com.expertzlab.yieldmanagement.fileutils.propertymanager.PropertyManagerDataReader;
 import com.expertzlab.yieldmanagement.models.Owner;
 import com.expertzlab.yieldmanagement.models.PropertyManager;
@@ -20,7 +21,7 @@ public class OwnerRandomizer {
     int pos2;
     Connection con;
 
-    int maxOwnerCount =20;
+    int maxOwnerCount = CountConfig.OWNER_COUNT;
     int recordcount = 1;
     long lastId = 0;
     PropertyManagerDataReader pmDataReader;

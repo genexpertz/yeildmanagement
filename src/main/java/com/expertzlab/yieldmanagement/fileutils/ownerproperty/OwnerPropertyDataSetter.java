@@ -26,7 +26,7 @@ public  class OwnerPropertyDataSetter extends DataSetter {
         try {
             loadedClass = Class.forName(clazz.getName());
             op = (OwnerProperty) loadedClass.newInstance();
-            for(int i = 0; i< hArray.length; i++) {
+            for(int i = 0; i<rArray.length; i++) {
 
 
                 Method m = clazz.getMethod("set" +capitalizeFirstLetter( hArray[i]), String.class);

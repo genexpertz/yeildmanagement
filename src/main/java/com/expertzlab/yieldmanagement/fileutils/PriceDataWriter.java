@@ -19,6 +19,7 @@ public class PriceDataWriter{
     {
         this.con = con;
     }
+
     public void execute(Price price)
     {
         String dateInsertSQL = "insert into price_list values(?,?,?,?,?)";

@@ -1,5 +1,6 @@
+use yieldmanagement;
 DROP FUNCTION IF EXISTS insert_dates;
---  DELIMITER $$
+  DELIMITER $$
     CREATE FUNCTION insert_dates(start_date DATE, num_days INT)
       RETURNS BOOL
       BEGIN
@@ -16,4 +17,4 @@ DROP FUNCTION IF EXISTS insert_dates;
       END WHILE;
         RETURN TRUE;
    END;
--- DELIMITER ;
+ DELIMITER ;

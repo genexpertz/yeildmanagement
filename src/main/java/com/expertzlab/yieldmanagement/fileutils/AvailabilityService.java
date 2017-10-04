@@ -1,5 +1,6 @@
 package com.expertzlab.yieldmanagement.fileutils;
 
+import com.expertzlab.yieldmanagement.fileutils.competingproperty.CompatencyPropertyDataReader;
 import com.expertzlab.yieldmanagement.fileutils.owner.OwnerDataReader;
 import com.expertzlab.yieldmanagement.fileutils.ownerproperty.OwnerPropertyDataReader;
 import com.expertzlab.yieldmanagement.models.*;
@@ -50,14 +51,16 @@ public class AvailabilityService {
 
                 //Get Dates
                 dtDr.getAllDateList();
+                Availability avail = new Availability();
                 while (dtDr.hasNext()) {
 
                     //Setting Owner P Availability
                     YMDate dt = dtDr.get();
-                    Availability avail = new Availability();
+
                     avail.setOid(owner.getId());
                     avail.setOpid(ownerProperty.getPropertyId());
                     avail.setDid(dt.getId());
+                    avail.setCpid(0);
                     String bookStatus = availRand.isBooked();
                     avail.setStatus(bookStatus);
                     availDwr.execute(avail);
@@ -70,7 +73,7 @@ public class AvailabilityService {
                         ownercp = cpDr.get();
 
                         //Setting Owner P price
-                        avail = new Availability();
+                        avail.setOpid(0);
                         avail.setOid(owner.getId());
                         avail.setCpid(ownercp.getCpid());
                         avail.setDid(dt.getId());

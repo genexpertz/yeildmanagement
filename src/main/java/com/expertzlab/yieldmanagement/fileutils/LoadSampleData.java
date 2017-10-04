@@ -1,5 +1,6 @@
 package com.expertzlab.yieldmanagement.fileutils;
 
+import com.expertzlab.yieldmanagement.fileutils.competingproperty.CompatencyPropertyDataSetter;
 import com.expertzlab.yieldmanagement.fileutils.owner.OwnerDataSetter;
 import com.expertzlab.yieldmanagement.fileutils.propertymanager.PropertyManagerDataSetter;
 import com.expertzlab.yieldmanagement.models.*;

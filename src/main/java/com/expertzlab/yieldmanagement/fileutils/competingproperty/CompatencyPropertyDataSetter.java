@@ -1,5 +1,6 @@
-package com.expertzlab.yieldmanagement.fileutils;
+package com.expertzlab.yieldmanagement.fileutils.competingproperty;
 
+import com.expertzlab.yieldmanagement.fileutils.DataSetter;
 import com.expertzlab.yieldmanagement.models.CompetantProperty;
 
 import java.lang.reflect.InvocationTargetException;
@@ -13,7 +14,7 @@ public class CompatencyPropertyDataSetter extends DataSetter {
     String[] hArray;
     String[] rArray;
 
-    CompatencyPropertyDataSetter(Class clazz, String[] hArray, String[] rArray) {
+    public CompatencyPropertyDataSetter(Class clazz, String[] hArray, String[] rArray) {
         this.clazz =clazz;
         this.hArray = hArray;
         this.rArray = rArray;

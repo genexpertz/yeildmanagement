@@ -40,6 +40,9 @@ public class OwnerDataWriter{
                 statement.execute();
                 System.out.println("Executed successfully");
             }
+
+            list.clear();;
+            list = null;
         } catch (SQLException e) {
             e.printStackTrace();
         }
