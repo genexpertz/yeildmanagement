@@ -31,6 +31,7 @@ public class YmReducer extends org.apache.hadoop.mapreduce.Reducer<Text,Text,Tex
 
         String date = null;
         for (Text var : valueList) {
+            System.out.println("MAPOUT:"+var);
             String[] keyValueArray = var.toString().split(",");
             String ownerId = null;
             String opId = null;
@@ -44,12 +45,16 @@ public class YmReducer extends org.apache.hadoop.mapreduce.Reducer<Text,Text,Tex
                     date = keyValue[1];
                 } else if("oid".equals(keyValue[0])){
                     ownerId = keyValue[1];
-                    hashMap.put(ownerId, new HashMap<String, OwnerProperty>());
+                    if(hashMap.get(ownerId)== null) {
+                        hashMap.put(ownerId, new HashMap<String, OwnerProperty>());
+                    }
                 } else if("opid".equals(keyValue[0])){
                     opId = keyValue[1];
                     if(hashMap.get(ownerId) != null){
-                        OwnerProperty op =  new OwnerProperty();
-                        hashMap.get(ownerId).put(opId,op);
+                        if(hashMap.get(ownerId).get(opId) == null) {
+                            OwnerProperty op = new OwnerProperty();
+                            hashMap.get(ownerId).put(opId, op);
+                        }
                     }
                 } else if("opp".equals(keyValue[0])){
                     opp = keyValue[1];
@@ -59,9 +64,14 @@ public class YmReducer extends org.apache.hadoop.mapreduce.Reducer<Text,Text,Tex
                     hashMap.get(ownerId).get(opId).setBookedStatus(opbs);
                 } else if("cpid".equals(keyValue[0])){
                     cpId = keyValue[1];
-                    HashMap<String, CompetingProperty> compPropMap = new HashMap<>();
-                    compPropMap.put(cpId,new CompetingProperty());
-                    hashMap.get(ownerId).get(opId).setCompPropMap(compPropMap);
+                    HashMap<String, CompetingProperty> compPropMap = hashMap.get(ownerId).get(opId).getCompPropMap();
+                    if(compPropMap == null) {
+                        compPropMap = new HashMap();
+                        hashMap.get(ownerId).get(opId).setCompPropMap(compPropMap);
+                    }
+                    if(compPropMap.get(cpId) == null) {
+                        compPropMap.put(cpId, new CompetingProperty());
+                    }
                 } else if("cpp".equals(keyValue[0])){
                     cpp = keyValue[1];
                     hashMap.get(ownerId).get(opId).getCompPropMap().get(cpId).setPrice(cpp);
@@ -93,6 +103,9 @@ public class YmReducer extends org.apache.hadoop.mapreduce.Reducer<Text,Text,Tex
                 String opId = ownPropE.getKey();
                 String opp = ownPropE.getValue().getPrice();
                 String opbs = ownPropE.getValue().getBookedStatus();
+                if(hashMap.get(ownerId).get(opId).getCompPropMap() == null){
+                    continue;
+                }
                 Set<Map.Entry<String, CompetingProperty>> compEntries = hashMap.get(ownerId).get(opId).getCompPropMap().entrySet();
                 for (Map.Entry compE : compEntries) {
                     int compProPrice = Integer.parseInt(((CompetingProperty) compE.getValue()).getPrice());
@@ -108,7 +121,7 @@ public class YmReducer extends org.apache.hadoop.mapreduce.Reducer<Text,Text,Tex
                 compPropAvgPrice = getAveragePrice(compPropPriceSum, compPropPriceCount);
                 compAvgBookStat = getBookingStatPercentage(compPropPriceCount, compPropBookStatCount);
                 //oid,opid,opp,opbs,cpap,cpabs
-                String valueString = ","+ownerId+","+opId+","+opp+","+opbs+","+compPropAvgPrice+","+compAvgBookStat;
+                String valueString = ownerId+","+opId+","+opp+","+opbs+","+compPropAvgPrice+","+compAvgBookStat;
                 context.write(new Text(date),new Text(valueString));
             }
         }
@@ -124,8 +137,8 @@ public class YmReducer extends org.apache.hadoop.mapreduce.Reducer<Text,Text,Tex
 
     private String getBookingStatPercentage(int priceCount, int bookStatCount) {
         String compAvgBookStat;
-        int bookStatPercentage = (bookStatCount/priceCount)*100;
-        compAvgBookStat = String.valueOf(bookStatPercentage);
+        float bookStatPercentage = ((float)bookStatCount/priceCount)*100;
+        compAvgBookStat = String.valueOf(Math.round(bookStatPercentage));
         return compAvgBookStat;
     }
 }

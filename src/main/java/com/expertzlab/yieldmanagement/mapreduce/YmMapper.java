@@ -56,14 +56,14 @@ public class YmMapper extends org.apache.hadoop.mapreduce.Mapper<LongWritable,Te
             int cpid=Integer.parseInt(stringTokenizer.nextToken());
             date_id = new Text(stringTokenizer.nextToken());
             String opbs, cpbs;
-            if(opid > 0) {
+            if(cpid == 0) {
                 opbs = stringTokenizer.nextToken();
                 context.write(date_id,new Text("oid="+oid+",opid="+opid+",opbs="+opbs));
                 System.out.println("show:"+date_id+",oid="+oid+",opid="+opid+",opbs="+opbs);
             } else {
                 cpbs = stringTokenizer.nextToken();
-                context.write(date_id,new Text("oid="+oid+",cpid="+cpid+",cpbs="+cpbs));
-                System.out.println("show:"+date_id+",oid="+oid+",cpid="+cpid+",cpbs="+cpbs);
+                context.write(date_id,new Text("oid="+oid+",opid="+opid+",cpid="+cpid+",cpbs="+cpbs));
+                System.out.println("show:"+date_id+",oid="+oid+",opid="+opid+",cpid="+cpid+",cpbs="+cpbs);
             }
         }
         else if(filename.contains("/date"))

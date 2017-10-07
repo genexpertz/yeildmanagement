@@ -56,15 +56,15 @@ public class YmReducerTest {
         values.add(new Text("oid=1,opid=1,cpid=1,cpp=10"));
         values.add(new Text("oid=1,opid=1,cpid=2,cpp=20"));
         values.add(new Text("oid=1,opid=1,cpid=3,cpp=30"));
-        values.add(new Text("oid=1,opid=1,cpid=3,cpbs=yes"));
-        values.add(new Text("oid=1,opid=1,cpid=3,cpbs=no"));
+        values.add(new Text("oid=1,opid=1,cpid=1,cpbs=yes"));
+        values.add(new Text("oid=1,opid=1,cpid=2,cpbs=no"));
         values.add(new Text("oid=1,opid=1,cpid=3,cpbs=yes"));
 
 
         values.add(new Text("date=2017-10-03"));
         reduceDriver.withInput(new Text("1"), values);
         //ownerId+","+opId+","+opp+","+opbs+","+compPropAvgPrice+","+compAvgBookStat;
-        reduceDriver.withOutput(new Text("2017-10-03"), new Text("1,1,10,yes,30,66"));
+        reduceDriver.withOutput(new Text("2017-10-03"), new Text("1,1,10,yes,20,67"));
         reduceDriver.runTest();
     }
     @Test

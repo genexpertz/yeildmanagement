@@ -72,8 +72,8 @@ public class AvailabilityService {
                     while (cpDr.hasNext()) {
                         ownercp = cpDr.get();
 
-                        //Setting Owner P price
-                        avail.setOpid(0);
+                        //Setting Owner P Availability
+                        avail.setOpid(ownerProperty.getPropertyId());
                         avail.setOid(owner.getId());
                         avail.setCpid(ownercp.getCpid());
                         avail.setDid(dt.getId());
