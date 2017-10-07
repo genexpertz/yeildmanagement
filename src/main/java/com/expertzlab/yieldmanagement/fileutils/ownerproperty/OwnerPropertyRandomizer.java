@@ -49,8 +49,8 @@ public class OwnerPropertyRandomizer {
         if (lastId > 0) recordcount += lastId;
         while (oDataReader.hasNext()) {
             Owner o = oDataReader.get();
-            int ownerCount = r.nextInt(maxOwnerPropertyCount);
-            for (int i = 0; i <= ownerCount; i++) {
+            int ownerPropertyCount = r.nextInt(maxOwnerPropertyCount);
+            for (int i = 0; i <= ownerPropertyCount; i++) {
 
                 pos1 = r.nextInt(list.size());
                 OwnerProperty p1 = (OwnerProperty) list.get(pos1);

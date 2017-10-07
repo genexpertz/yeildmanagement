@@ -56,9 +56,6 @@ public class YmReducerTest {
         values.add(new Text("oid=1,opid=1,cpid=1,cpp=10"));
         values.add(new Text("oid=1,opid=1,cpid=2,cpp=20"));
         values.add(new Text("oid=1,opid=1,cpid=3,cpp=30"));
-        values.add(new Text("oid=1,opid=1,cpid=1,cpbs=yes"));
-        values.add(new Text("oid=1,opid=1,cpid=2,cpbs=no"));
-        values.add(new Text("oid=1,opid=1,cpid=3,cpbs=yes"));
 
 
         values.add(new Text("date=2017-10-03"));
@@ -67,6 +64,26 @@ public class YmReducerTest {
         reduceDriver.withOutput(new Text("2017-10-03"), new Text("1,1,10,yes,20,67"));
         reduceDriver.runTest();
     }
+
+    @Test
+    public void testYmReducer_OID_OPID_CPID_OPBS() throws IOException, InterruptedException {
+        setUp();
+        List<Text> values = new ArrayList<Text>();
+
+        values.add(new Text("oid=3,opid=7,opp=10"));
+        values.add(new Text("oid=3,opid=7,opbs=yes"));
+        values.add(new Text("oid=3,opid=7,cpid=2,cpp=20"));
+        values.add(new Text("oid=3,opid=7,cpid=3,cpp=30"));
+        values.add(new Text("oid=3,opid=7,cpid=2,cpbs=no"));
+        values.add(new Text("oid=3,opid=7,cpid=3,cpbs=yes"));
+
+        values.add(new Text("date=2017-10-03"));
+        reduceDriver.withInput(new Text("1"), values);
+        //ownerId+","+opId+","+opp+","+opbs+","+compPropAvgPrice+","+compAvgBookStat;
+        reduceDriver.withOutput(new Text("2017-10-03"), new Text("3,7,10,yes,25,50"));
+        reduceDriver.runTest();
+    }
+
     @Test
     public void testYmReducer_date() throws IOException, InterruptedException {
         setUp();
