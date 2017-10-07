@@ -12,44 +12,44 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 
-public class CompatencyPropertyDataReader {
+public class CompetencyPropertyDataReader {
 
 
     Connection con;
-    protected ResultSet res;
 
-    public boolean hasNext() {
-
-        try {
-            return res.next();
-        } catch (SQLException e) {
-            return false;
-        }
-    }
-
-    public CompatencyPropertyDataReader(Connection con)
+    public CompetencyPropertyDataReader(Connection con)
     {
 
         this.con = con;
     }
-    public void getAllCompatencyPropertyList(int ownerPropId) throws SQLException {
-        PreparedStatement statement = con.prepareStatement("select * from compatency_property_list where opid=?");
+    public int getAllCompatencyPropertyCount(int ownerPropId) throws SQLException {
+        PreparedStatement statement = con.prepareStatement("select max(cpid) from compatency_property_list where opid=?");
         statement.setInt(1,ownerPropId);
-        res = statement.executeQuery();
-    }
-
-    public void close() throws SQLException{
+        ResultSet res = statement.executeQuery();
+        int compPropCount = 0;
+        if(res.next()){
+            compPropCount = res.getInt(1);
+        }
         res.close();
-        System.out.println("Executed successfully");
+        return compPropCount;
     }
 
-    public CompetantProperty get() throws SQLException {
+
+
+    public CompetantProperty get(int propId) throws SQLException {
         String[] hArray = CompetantPropertyRecordArray();
         String[] rArray = new String[10];
+        PreparedStatement statement = con.prepareStatement("select * from compatency_property_list where opid=?");
+        statement.setInt(1,propId);
+        ResultSet res = statement.executeQuery();
+        CompetantProperty competantProperty = null;
+        if(res.next()){
+            CompetantPropertyRecordArray(rArray,res);
+            CompatencyPropertyDataSetter com = new CompatencyPropertyDataSetter(CompetantProperty.class,hArray,rArray);
+            competantProperty = com.run();
+        }
 
-        CompetantPropertyRecordArray(rArray,res);
-        CompatencyPropertyDataSetter com = new CompatencyPropertyDataSetter(CompetantProperty.class,hArray,rArray);
-        CompetantProperty competantProperty = com.run();
+        res.close();
         return competantProperty;
     }
 

@@ -1,6 +1,6 @@
 package com.expertzlab.yieldmanagement.fileutils;
 
-import com.expertzlab.yieldmanagement.fileutils.competingproperty.CompatencyPropertyDataReader;
+import com.expertzlab.yieldmanagement.fileutils.competingproperty.CompetencyPropertyDataReader;
 import com.expertzlab.yieldmanagement.fileutils.owner.OwnerDataReader;
 import com.expertzlab.yieldmanagement.fileutils.ownerproperty.OwnerPropertyDataReader;
 import com.expertzlab.yieldmanagement.models.*;
@@ -18,7 +18,7 @@ public class PriceService {
     long lastId = 1;
     OwnerDataReader oDr;
     OwnerPropertyDataReader opDr;
-    CompatencyPropertyDataReader cpDr;
+    CompetencyPropertyDataReader cpDr;
     DateDataReader dtDr;
     PriceRandomizer priceRand;
     PriceDataWriter priceDwr;
@@ -27,7 +27,7 @@ public class PriceService {
         this.con = con;
         oDr = new OwnerDataReader(con);
         opDr = new OwnerPropertyDataReader(con);
-        cpDr = new CompatencyPropertyDataReader(con);
+        cpDr = new CompetencyPropertyDataReader(con);
         dtDr = new DateDataReader(con);
         priceRand = new PriceRandomizer();
         priceDwr = new PriceDataWriter(con);
@@ -37,15 +37,19 @@ public class PriceService {
 
         //Getting owners
         Owner owner = null;
-        oDr.getAllOwnerList();
-        while (oDr.hasNext()) {
-            owner = oDr.get();
+        int owcount = oDr.getAllOwnerCount();
+        for(int oc=1; oc <= owcount; oc++ ) {
+            owner = oDr.get(oc);
 
             //Get owner Property
-            opDr.getAllOwnerPropertyList(owner.getId());
             OwnerProperty ownerProperty = null;
-            while (opDr.hasNext()) {
-                ownerProperty = opDr.get();
+            int ownPropCount = opDr.getAllOwnerPropertyCount(owner.getId());
+            for(int opc=1; opc <= ownPropCount; opc++ ) {
+                ownerProperty = opDr.get(oc,opc);
+
+                if(ownerProperty == null){
+                    continue;
+                }
 
                 //Get Dates
                 dtDr.getAllDateList();
@@ -63,10 +67,10 @@ public class PriceService {
                     priceDwr.execute(price);
 
                     //Get competing Property
-                    cpDr.getAllCompatencyPropertyList(owner.getId());
+                    int comPropCount = cpDr.getAllCompatencyPropertyCount(opc);
                     CompetantProperty ownercp = null;
-                    while (cpDr.hasNext()) {
-                        ownercp = cpDr.get();
+                    for(int cpc = 1; cpc <=comPropCount; cpc++ ){
+                        ownercp = cpDr.get(opc);
 
                         //Setting Owner P price
                         price.setOid(owner.getId());

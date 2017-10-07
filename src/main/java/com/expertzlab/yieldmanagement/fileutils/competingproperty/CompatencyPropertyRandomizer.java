@@ -40,10 +40,10 @@ public class CompatencyPropertyRandomizer {
     public List getRandomizedList(List list) throws SQLException {
         List l1 = new ArrayList(recordcount);
         Random r = new Random();
-        opDataReader.getAllOwnerPropertyList();
-        OwnerProperty op = null;
-        while (opDataReader.hasNext()) {
-            op = opDataReader.get();
+        OwnerProperty ownerProperty = null;
+        int ownPropCount = opDataReader.getAllOwnerPropertyCount();
+        for(int opc=1; opc <= ownPropCount; opc++ ) {
+            ownerProperty = opDataReader.get(opc);
 
             int cpCount = r.nextInt(maxCompatencyPropertyCount);
 
@@ -56,8 +56,8 @@ public class CompatencyPropertyRandomizer {
                 CompetantProperty p3 = new CompetantProperty();
                 p3.setCpid((int) (recordcount + lastId));
                 p3.setName(p1.getName() + " " + p2.getName() + r.nextInt(((int) (recordcount + lastId))));
-                p3.setRegion(op.getRegion());
-                p3.setOpid(op.getPropertyId());
+                p3.setRegion(ownerProperty.getRegion());
+                p3.setOpid(ownerProperty.getPropertyId());
 
                 l1.add(p3);
                 recordcount++;

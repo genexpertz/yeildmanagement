@@ -4,6 +4,8 @@ package com.expertzlab.yieldmanagement.fileutils.ownerproperty;
  * Created by expertzlab on 9/24/17.
  */
 
+import com.expertzlab.yieldmanagement.fileutils.owner.OwnerDataSetter;
+import com.expertzlab.yieldmanagement.models.Owner;
 import com.expertzlab.yieldmanagement.models.OwnerProperty;
 
 
@@ -17,48 +19,68 @@ public class OwnerPropertyDataReader {
 
 
     Connection con;
-    protected ResultSet res;
 
-    public boolean hasNext() {
-
-        try {
-            return res.next();
-        } catch (SQLException e) {
-            return false;
-        }
-    }
 
     public OwnerPropertyDataReader(Connection con)
     {
 
         this.con = con;
     }
-    public void getAllOwnerPropertyList(int ownerId) throws SQLException {
-        PreparedStatement statement = con.prepareStatement("select * from owner_property where ownid=?");
+    public int getAllOwnerPropertyCount(int ownerId) throws SQLException {
+        PreparedStatement statement = con.prepareStatement("select max(opid) from owner_property where ownid=?");
         statement.setInt(1,ownerId);
-        res = statement.executeQuery();
-    }
-
-    public void getAllOwnerPropertyList() throws SQLException {
-        PreparedStatement statement = con.prepareStatement("select * from owner_property");
-        res = statement.executeQuery();
-    }
-
-    public void close() throws SQLException{
+        ResultSet res = statement.executeQuery();
+        int propertyCount = 0;
+        while(res.next()){
+            propertyCount = res.getInt(1);
+        }
         res.close();
-        System.out.println("Executed successfully");
+        return propertyCount;
     }
 
-    public OwnerProperty get() throws SQLException {
-        String[] hArray = prepareParticipantHeaderArray();
-        String[] rArray = new String[4];
+    public int getAllOwnerPropertyCount() throws SQLException {
+        PreparedStatement statement = con.prepareStatement("select max(opid) from owner_property");
+        ResultSet res = statement.executeQuery();
+        int propertyCount = 0;
+        while(res.next()){
+            propertyCount = res.getInt(1);
+        }
+        res.close();
+        return propertyCount;
+    }
 
-        OwnerPropertyRecordArray(rArray,res);
-        OwnerPropertyDataSetter eds = new OwnerPropertyDataSetter(OwnerProperty.class,hArray,rArray);
-        OwnerProperty ownerProperty = eds.run();
+    public OwnerProperty get(int ownerId, int propertyId) throws SQLException {
+        String[] hArray = prepareOwnerPropertyHeaderArray();
+        String[] rArray = new String[4];
+        PreparedStatement ps = con.prepareStatement("select * from owner_property where ownid=? and opid=?");
+        ps.setInt(1,ownerId);
+        ps.setInt(2,propertyId);
+        ResultSet res = ps.executeQuery();
+        OwnerProperty ownerProperty = null;
+        if(res.next()) {
+            OwnerPropertyRecordArray(rArray, res);
+            OwnerPropertyDataSetter eds = new OwnerPropertyDataSetter(OwnerProperty.class, hArray, rArray);
+            ownerProperty = eds.run();
+        }
+        res.close();
         return ownerProperty;
     }
 
+    public OwnerProperty get(int propertyId) throws SQLException {
+        String[] hArray = prepareOwnerPropertyHeaderArray();
+        String[] rArray = new String[4];
+        PreparedStatement ps = con.prepareStatement("select * from owner_property where opid=?");
+        ps.setInt(1,propertyId);
+        ResultSet res = ps.executeQuery();
+        OwnerProperty ownerProperty = null;
+        if(res.next()) {
+            OwnerPropertyRecordArray(rArray, res);
+            OwnerPropertyDataSetter eds = new OwnerPropertyDataSetter(OwnerProperty.class, hArray, rArray);
+            ownerProperty = eds.run();
+        }
+        res.close();
+        return ownerProperty;
+    }
 
 
     private void OwnerPropertyRecordArray(String[] rArray, ResultSet res) throws SQLException {
@@ -68,7 +90,7 @@ public class OwnerPropertyDataReader {
         rArray[3] = res.getString(4);
     }
 
-    private String[] prepareParticipantHeaderArray(){
+    private String[] prepareOwnerPropertyHeaderArray(){
         String[] hArray = new String[4];
         hArray[0]= "opid";
         hArray[1]="ownid";

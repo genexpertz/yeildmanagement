@@ -3,49 +3,46 @@ package com.expertzlab.yieldmanagement.fileutils.owner;
 import com.expertzlab.yieldmanagement.fileutils.owner.OwnerDataSetter;
 import com.expertzlab.yieldmanagement.models.Owner;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 
 
 public class OwnerDataReader {
 
 
     Connection con;
-    protected ResultSet res;
 
-    public boolean hasNext() {
-
-        try {
-            return res.next();
-        } catch (SQLException e) {
-            return false;
-        }
-    }
 
     public OwnerDataReader(Connection con)
     {
 
         this.con = con;
     }
-    public void getAllOwnerList() throws SQLException {
-        PreparedStatement statement = con.prepareStatement("select * from owner");
-        res = statement.executeQuery();
-    }
-
-    public void close() throws SQLException{
+    public int getAllOwnerCount() throws SQLException {
+        Statement statement = con.createStatement();
+        ResultSet res = statement.executeQuery("select max(ownid) from owner");
+        int count = 0;
+        if(res.next()) {
+            count = res.getInt(1);
+        }
         res.close();
-        System.out.println("Executed successfully");
+        return count;
+
     }
 
-    public Owner get() throws SQLException {
+
+    public Owner get(int ownId) throws SQLException {
         String[] hArray = prepareParticipantHeaderArray();
         String[] rArray = new String[4];
-
-        OwnerRecordArray(rArray,res);
-        OwnerDataSetter eds = new OwnerDataSetter(Owner.class,hArray,rArray);
-        Owner owner = eds.run();
+        PreparedStatement ps = con.prepareStatement("select * from owner where ownid=?");
+        ps.setInt(1,ownId);
+        ResultSet res = ps.executeQuery();
+        Owner owner = null;
+        if(res.next()) {
+            OwnerRecordArray(rArray, res);
+            OwnerDataSetter eds = new OwnerDataSetter(Owner.class, hArray, rArray);
+            owner = eds.run();
+        }
+        res.close();
         return owner;
     }
 

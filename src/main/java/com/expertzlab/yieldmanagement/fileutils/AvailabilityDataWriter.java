@@ -34,9 +34,9 @@ public class AvailabilityDataWriter{
             stmt.execute();
 
             if(avail.getOpid() < 1) {
-                System.out.println("Writing book status "+avail.getStatus()+" for Comp pro " );
+                System.out.println("Writing book status "+avail.getStatus()+" for Comp pro - "+avail.getStatus() );
             } else {
-                System.out.println("Writing book status "+avail.getStatus()+" for Own pro ");
+                System.out.println("Writing book status "+avail.getStatus()+" for Own pro - "+avail.getStatus());
             }
 
         } catch (SQLException e) {

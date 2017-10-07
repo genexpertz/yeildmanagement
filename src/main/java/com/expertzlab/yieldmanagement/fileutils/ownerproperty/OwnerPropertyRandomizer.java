@@ -2,10 +2,8 @@ package com.expertzlab.yieldmanagement.fileutils.ownerproperty;
 
 import com.expertzlab.yieldmanagement.fileutils.CountConfig;
 import com.expertzlab.yieldmanagement.fileutils.owner.OwnerDataReader;
-import com.expertzlab.yieldmanagement.fileutils.propertymanager.PropertyManagerDataReader;
 import com.expertzlab.yieldmanagement.models.Owner;
 import com.expertzlab.yieldmanagement.models.OwnerProperty;
-import com.expertzlab.yieldmanagement.models.PropertyManager;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -45,10 +43,11 @@ public class OwnerPropertyRandomizer {
     public List getRandomizedList(List list) throws SQLException {
         List l1 = new ArrayList(recordcount);
         Random r = new Random();
-        oDataReader.getAllOwnerList();
         if (lastId > 0) recordcount += lastId;
-        while (oDataReader.hasNext()) {
-            Owner o = oDataReader.get();
+        Owner owner = null;
+        int owcount = oDataReader.getAllOwnerCount();
+        for(int oc=1; oc <= owcount; oc++ ) {
+            owner = oDataReader.get(oc);
             int ownerPropertyCount = r.nextInt(maxOwnerPropertyCount);
             for (int i = 0; i <= ownerPropertyCount; i++) {
 
@@ -62,7 +61,7 @@ public class OwnerPropertyRandomizer {
                 p3.setRegion(pos1 > pos2 ? p1.getRegion() : p2.getRegion());
                 int rndNumer = r.nextInt(99999);
                 p3.setRegion(p3.getRegion() + "" + rndNumer);
-                p3.setOwnerId(o.getId());
+                p3.setOwnerId(owner.getId());
                 l1.add(p3);
                 recordcount++;
             }
