@@ -1,6 +1,7 @@
 package com.expertzlab.yieldmanagement.fileutils.propertymanager;
 
 import com.expertzlab.yieldmanagement.fileutils.CountConfig;
+import com.expertzlab.yieldmanagement.genutils.RandomNumGenerator;
 import com.expertzlab.yieldmanagement.models.PropertyManager;
 
 import java.sql.Connection;
@@ -19,34 +20,32 @@ public class PropertyManagerRandomizer {
     int pos2;
     String pmIdGen;
 
-    int recordcount = CountConfig.PROPERTY_MANAGER_COUNT;
-    long lastId = 0;
+    int recordcount = 0;
+    int maxpropManagerCount = CountConfig.PROPERTY_MANAGER_COUNT;
+    int lastId = 0;
 
     public PropertyManagerRandomizer(Connection con ) throws SQLException {
         Statement stmt = con.createStatement();
         ResultSet res = stmt.executeQuery("Select max(id) from property_manager");
         while (res.next()){
-            lastId = res.getLong(1);
+            lastId = res.getInt(1);
         }
     }
     public List getRandomizedList(List list) {
         List l1 = new ArrayList(recordcount);
-
-        for (long i = lastId+1; i <= recordcount; i++) {
+        recordcount = lastId+1;
+        for (long i = 1; i <= maxpropManagerCount; i++) {
 
             Random r = new Random();
-            pos1 = r.nextInt(list.size());
-            if(pos1 == 0) pos1++;
+            pos1 = RandomNumGenerator.getRandomPosition(list.size(),r);
             PropertyManager p1 = (PropertyManager) list.get(pos1);
-            pos2 = r.nextInt(list.size());
-            if(pos2 == 0) pos2 ++;
+            pos2 = RandomNumGenerator.getRandomPosition(list.size(),r);
             PropertyManager p2 = (PropertyManager) list.get(pos2);
             if(p1 == null || p2 == null){
                 throw new RuntimeException("Not enough value in the list");
             }
             PropertyManager p3 = new PropertyManager();
-            //pmIdGen = "PM" + i;
-            p3.setManagerId((int)i);
+            p3.setManagerId(recordcount);
             p3.setName(p1.getName() + " " + p2.getName() + r.nextInt(((int)(recordcount+lastId))));
             p3.setRegion(pos1 > pos2 ? p1.getRegion() : p2.getRegion());
             int rndNumer = r.nextInt(99999);
@@ -58,6 +57,7 @@ public class PropertyManagerRandomizer {
                 p3.setContact(contact.substring(0, contact.length() - ("" + rndNumer).length()-1) + rndNumer);
             }
             l1.add(p3);
+            recordcount++;
         }
 
         return l1;

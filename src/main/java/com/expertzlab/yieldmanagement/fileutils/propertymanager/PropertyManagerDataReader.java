@@ -52,7 +52,7 @@ public class PropertyManagerDataReader {
     private void propertyManagerRecordArray(String[] rArray, ResultSet res) throws SQLException {
         rArray[0] = res.getString(1);
         rArray[1] = res.getString(2);
-        rArray[2] = String.valueOf(res.getInt(3));
+        rArray[2] = res.getString(3);
         rArray[3] = res.getString(4);
     }
 

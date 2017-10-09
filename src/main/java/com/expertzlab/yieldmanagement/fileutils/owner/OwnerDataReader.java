@@ -24,6 +24,7 @@ public class OwnerDataReader {
         if(res.next()) {
             count = res.getInt(1);
         }
+        statement.close();
         res.close();
         return count;
 
@@ -42,6 +43,7 @@ public class OwnerDataReader {
             OwnerDataSetter eds = new OwnerDataSetter(Owner.class, hArray, rArray);
             owner = eds.run();
         }
+        ps.close();
         res.close();
         return owner;
     }

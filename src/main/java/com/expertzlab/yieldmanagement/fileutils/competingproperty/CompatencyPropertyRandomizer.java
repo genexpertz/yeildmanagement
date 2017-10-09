@@ -2,6 +2,7 @@ package com.expertzlab.yieldmanagement.fileutils.competingproperty;
 
 import com.expertzlab.yieldmanagement.fileutils.CountConfig;
 import com.expertzlab.yieldmanagement.fileutils.ownerproperty.OwnerPropertyDataReader;
+import com.expertzlab.yieldmanagement.genutils.RandomNumGenerator;
 import com.expertzlab.yieldmanagement.models.CompetantProperty;
 import com.expertzlab.yieldmanagement.models.OwnerProperty;
 
@@ -38,6 +39,8 @@ public class CompatencyPropertyRandomizer {
     }
 
     public List getRandomizedList(List list) throws SQLException {
+
+        recordcount = (int)lastId +1;
         List l1 = new ArrayList(recordcount);
         Random r = new Random();
         OwnerProperty ownerProperty = null;
@@ -46,15 +49,18 @@ public class CompatencyPropertyRandomizer {
             ownerProperty = opDataReader.get(opc);
 
             int cpCount = r.nextInt(maxCompatencyPropertyCount);
+            if(cpCount <1) cpCount = 1;
+            else
+            if(cpCount > maxCompatencyPropertyCount) cpCount = maxCompatencyPropertyCount;
 
-            for (int i = 0; i <= cpCount; i++) {
+            for (int i = 1; i <= cpCount; i++) {
 
-                pos1 = r.nextInt(list.size());
+                pos1 = RandomNumGenerator.getRandomPosition(list.size(), r);
                 CompetantProperty p1 = (CompetantProperty) list.get(pos1);
-                pos2 = r.nextInt(list.size());
+                pos2 = RandomNumGenerator.getRandomPosition(list.size(), r);
                 CompetantProperty p2 = (CompetantProperty) list.get(pos2);
                 CompetantProperty p3 = new CompetantProperty();
-                p3.setCpid((int) (recordcount + lastId));
+                p3.setCpid(recordcount);
                 p3.setName(p1.getName() + " " + p2.getName() + r.nextInt(((int) (recordcount + lastId))));
                 p3.setRegion(ownerProperty.getRegion());
                 p3.setOpid(ownerProperty.getPropertyId());
@@ -62,8 +68,6 @@ public class CompatencyPropertyRandomizer {
                 l1.add(p3);
                 recordcount++;
             }
-
-            if(recordcount>maxCompatencyPropertyCount) break;
         }
         return l1;
 

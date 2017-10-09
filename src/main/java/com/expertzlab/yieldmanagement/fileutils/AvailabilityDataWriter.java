@@ -32,7 +32,8 @@ public class AvailabilityDataWriter{
             stmt.setInt(4,avail.getDid());
             stmt.setString(5,avail.getStatus());
             stmt.execute();
-
+            stmt.close();
+            System.out.println("Owner id:"+avail.getOid()+", owPropid:"+avail.getOpid()+", copPropid:"+avail.getCpid());
             if(avail.getOpid() < 1) {
                 System.out.println("Writing book status "+avail.getStatus()+" for Comp pro - "+avail.getStatus() );
             } else {

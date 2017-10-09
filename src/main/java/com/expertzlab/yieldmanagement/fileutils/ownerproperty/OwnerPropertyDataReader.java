@@ -34,6 +34,20 @@ public class OwnerPropertyDataReader {
         while(res.next()){
             propertyCount = res.getInt(1);
         }
+        statement.close();
+        res.close();
+        return propertyCount;
+    }
+
+    public int getAllOwnerPropertyStartCount(int ownerId) throws SQLException {
+        PreparedStatement statement = con.prepareStatement("select min(opid) from owner_property where ownid=?");
+        statement.setInt(1,ownerId);
+        ResultSet res = statement.executeQuery();
+        int propertyCount = 0;
+        while(res.next()){
+            propertyCount = res.getInt(1);
+        }
+        statement.close();
         res.close();
         return propertyCount;
     }
@@ -45,6 +59,7 @@ public class OwnerPropertyDataReader {
         while(res.next()){
             propertyCount = res.getInt(1);
         }
+        statement.close();
         res.close();
         return propertyCount;
     }
@@ -62,6 +77,7 @@ public class OwnerPropertyDataReader {
             OwnerPropertyDataSetter eds = new OwnerPropertyDataSetter(OwnerProperty.class, hArray, rArray);
             ownerProperty = eds.run();
         }
+        ps.close();
         res.close();
         return ownerProperty;
     }
@@ -78,6 +94,7 @@ public class OwnerPropertyDataReader {
             OwnerPropertyDataSetter eds = new OwnerPropertyDataSetter(OwnerProperty.class, hArray, rArray);
             ownerProperty = eds.run();
         }
+        ps.close();
         res.close();
         return ownerProperty;
     }

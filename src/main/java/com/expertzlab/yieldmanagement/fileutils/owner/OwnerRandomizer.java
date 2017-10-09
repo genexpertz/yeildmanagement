@@ -2,6 +2,7 @@ package com.expertzlab.yieldmanagement.fileutils.owner;
 
 import com.expertzlab.yieldmanagement.fileutils.CountConfig;
 import com.expertzlab.yieldmanagement.fileutils.propertymanager.PropertyManagerDataReader;
+import com.expertzlab.yieldmanagement.genutils.RandomNumGenerator;
 import com.expertzlab.yieldmanagement.models.Owner;
 import com.expertzlab.yieldmanagement.models.PropertyManager;
 
@@ -22,7 +23,7 @@ public class OwnerRandomizer {
     Connection con;
 
     int maxOwnerCount = CountConfig.OWNER_COUNT;
-    int recordcount = 1;
+    int recordcount = 0;
     long lastId = 0;
     PropertyManagerDataReader pmDataReader;
 
@@ -39,17 +40,21 @@ public class OwnerRandomizer {
         List l1 = new ArrayList();
         Random r = new Random();
         pmDataReader.getAllPropertyManagerList();
+        recordcount = (int)lastId +1;
        while(pmDataReader.hasNext()) {
            PropertyManager pm = pmDataReader.get();
            int ownerCount = r.nextInt(maxOwnerCount);
-           for (long i = recordcount; i < ownerCount; i++) {
+           if(ownerCount < 1) ownerCount = 1;
+           else if(ownerCount > maxOwnerCount) ownerCount = maxOwnerCount;
 
-               pos1 = r.nextInt(list.size());
+           for (long i = 1; i <= ownerCount; i++) {
+
+               pos1 = RandomNumGenerator.getRandomPosition(list.size(),r);
                Owner p1 = (Owner) list.get(pos1);
-               pos2 = r.nextInt(list.size());
+               pos2 = RandomNumGenerator.getRandomPosition(list.size(),r);
                Owner p2 = (Owner) list.get(pos2);
                Owner p3 = new Owner();
-               p3.setId((int) (i));
+               p3.setId(recordcount);
                p3.setName(p1.getName() + " " + p2.getName() + r.nextInt(((int) (recordcount + lastId))));
                p3.setAddress(pos1 > pos2 ? p1.getAddress() : p2.getAddress());
                int rndNumer = r.nextInt(99999);
@@ -63,7 +68,7 @@ public class OwnerRandomizer {
                l1.add(p3);
                recordcount++;
            }
-           if(recordcount>= maxOwnerCount) break;
+
        }
 
         return l1;

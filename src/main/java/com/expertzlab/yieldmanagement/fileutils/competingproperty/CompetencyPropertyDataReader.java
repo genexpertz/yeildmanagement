@@ -30,6 +30,20 @@ public class CompetencyPropertyDataReader {
         if(res.next()){
             compPropCount = res.getInt(1);
         }
+        statement.close();
+        res.close();
+        return compPropCount;
+    }
+
+    public int getAllCompatencyPropertyStartCount(int ownerPropId) throws SQLException {
+        PreparedStatement statement = con.prepareStatement("select min(cpid) from compatency_property_list where opid=?");
+        statement.setInt(1,ownerPropId);
+        ResultSet res = statement.executeQuery();
+        int compPropCount = 0;
+        if(res.next()){
+            compPropCount = res.getInt(1);
+        }
+        statement.close();
         res.close();
         return compPropCount;
     }
@@ -39,7 +53,7 @@ public class CompetencyPropertyDataReader {
     public CompetantProperty get(int propId) throws SQLException {
         String[] hArray = CompetantPropertyRecordArray();
         String[] rArray = new String[10];
-        PreparedStatement statement = con.prepareStatement("select * from compatency_property_list where opid=?");
+        PreparedStatement statement = con.prepareStatement("select * from compatency_property_list where cpid=?");
         statement.setInt(1,propId);
         ResultSet res = statement.executeQuery();
         CompetantProperty competantProperty = null;
@@ -48,7 +62,7 @@ public class CompetencyPropertyDataReader {
             CompatencyPropertyDataSetter com = new CompatencyPropertyDataSetter(CompetantProperty.class,hArray,rArray);
             competantProperty = com.run();
         }
-
+        statement.close();
         res.close();
         return competantProperty;
     }

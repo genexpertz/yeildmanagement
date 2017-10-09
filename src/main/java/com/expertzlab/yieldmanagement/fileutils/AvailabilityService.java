@@ -46,8 +46,9 @@ public class AvailabilityService {
 
             //Get owner Property
             OwnerProperty ownerProperty = null;
-            int ownPropCount = opDr.getAllOwnerPropertyCount(owner.getId());
-            for(int opc=1; opc <= ownPropCount; opc++ ) {
+            int ownPropCountMax = opDr.getAllOwnerPropertyCount(owner.getId());
+            int ownPropCountMin = opDr.getAllOwnerPropertyStartCount(owner.getId());
+            for(int opc=ownPropCountMin; opc <= ownPropCountMax; opc++ ) {
                 ownerProperty = opDr.get(oc,opc);
 
                 //Get Dates
@@ -69,9 +70,10 @@ public class AvailabilityService {
 
                     //Get competing Property
                     int comPropCount = cpDr.getAllCompatencyPropertyCount(opc);
+                    int compPropCountStart = cpDr.getAllCompatencyPropertyStartCount(opc);
                     CompetantProperty ownercp = null;
-                    for(int cpc = 1; cpc <=comPropCount; cpc++ ){
-                        ownercp = cpDr.get(opc);
+                    for(int cpc = compPropCountStart; cpc <=comPropCount; cpc++ ){
+                        ownercp = cpDr.get(cpc);
 
                         //Setting Owner P Availability
                         avail.setOpid(ownerProperty.getPropertyId());

@@ -44,6 +44,7 @@ public class PriceService {
             //Get owner Property
             OwnerProperty ownerProperty = null;
             int ownPropCount = opDr.getAllOwnerPropertyCount(owner.getId());
+            int ownPropSCount = opDr.getAllOwnerPropertyStartCount(owner.getId());
             for(int opc=1; opc <= ownPropCount; opc++ ) {
                 ownerProperty = opDr.get(oc,opc);
 
@@ -68,9 +69,10 @@ public class PriceService {
 
                     //Get competing Property
                     int comPropCount = cpDr.getAllCompatencyPropertyCount(opc);
+                    int comPropSCount = cpDr.getAllCompatencyPropertyStartCount(opc);
                     CompetantProperty ownercp = null;
-                    for(int cpc = 1; cpc <=comPropCount; cpc++ ){
-                        ownercp = cpDr.get(opc);
+                    for(int cpc = comPropSCount; cpc <=comPropCount; cpc++ ){
+                        ownercp = cpDr.get(cpc);
 
                         //Setting Owner P price
                         price.setOid(owner.getId());

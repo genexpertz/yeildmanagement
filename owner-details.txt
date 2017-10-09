@@ -223,7 +223,7 @@ Jorge|Harda|6332073218
 Javier|Hardoi|6332073127
 Zion|Haridwar|6332072963
 Andres|Hassan|6332072796
-Charlie|Haveri|district	6332072603
+Charlie|Haveri|6332072603
 Paxton|Hazaribag|6332072095
 Emiliano|Hingoli|6332071674
 Brooks|Hissar|6832076051

@@ -32,6 +32,7 @@ public class PriceDataWriter{
             stmt.setInt(4,price.getDid());
             stmt.setFloat(5,price.getPrice());
             stmt.execute();
+            stmt.close();
 
             if(price.getOpid() < 1) {
                 System.out.println("Writing Price "+price.getPrice()+" for Comp pro " + price.getCpid());

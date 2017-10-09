@@ -2,6 +2,7 @@ package com.expertzlab.yieldmanagement.fileutils.ownerproperty;
 
 import com.expertzlab.yieldmanagement.fileutils.CountConfig;
 import com.expertzlab.yieldmanagement.fileutils.owner.OwnerDataReader;
+import com.expertzlab.yieldmanagement.genutils.RandomNumGenerator;
 import com.expertzlab.yieldmanagement.models.Owner;
 import com.expertzlab.yieldmanagement.models.OwnerProperty;
 
@@ -43,21 +44,24 @@ public class OwnerPropertyRandomizer {
     public List getRandomizedList(List list) throws SQLException {
         List l1 = new ArrayList(recordcount);
         Random r = new Random();
-        if (lastId > 0) recordcount += lastId;
+        recordcount += lastId;
         Owner owner = null;
         int owcount = oDataReader.getAllOwnerCount();
         for(int oc=1; oc <= owcount; oc++ ) {
             owner = oDataReader.get(oc);
             int ownerPropertyCount = r.nextInt(maxOwnerPropertyCount);
-            for (int i = 0; i <= ownerPropertyCount; i++) {
+            if(ownerPropertyCount < 1) ownerPropertyCount =1;
+            else
+                if(ownerPropertyCount > maxOwnerPropertyCount) ownerPropertyCount = maxOwnerPropertyCount;
+            for (int i = 1; i <= ownerPropertyCount; i++) {
 
-                pos1 = r.nextInt(list.size());
+                pos1 = RandomNumGenerator.getRandomPosition(list.size(), r);
                 OwnerProperty p1 = (OwnerProperty) list.get(pos1);
-                pos2 = r.nextInt(list.size());
+                pos2 = RandomNumGenerator.getRandomPosition(list.size(), r);
                 OwnerProperty p2 = (OwnerProperty) list.get(pos2);
                 OwnerProperty p3 = new OwnerProperty();
-                p3.setPropertyId((int) (recordcount + lastId));
-                p3.setName(p1.getName() + " " + p2.getName() + r.nextInt(((int) (recordcount + lastId))));
+                p3.setPropertyId(recordcount);
+                p3.setName(p1.getName() + " " + p2.getName() + r.nextInt(maxOwnerPropertyCount));
                 p3.setRegion(pos1 > pos2 ? p1.getRegion() : p2.getRegion());
                 int rndNumer = r.nextInt(99999);
                 p3.setRegion(p3.getRegion() + "" + rndNumer);
@@ -65,7 +69,6 @@ public class OwnerPropertyRandomizer {
                 l1.add(p3);
                 recordcount++;
             }
-            if (recordcount > maxOwnerPropertyCount) break;
         }
         return l1;
     }
