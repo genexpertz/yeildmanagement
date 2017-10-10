@@ -6,10 +6,7 @@ import com.expertzlab.yieldmanagement.genutils.RandomNumGenerator;
 import com.expertzlab.yieldmanagement.models.Owner;
 import com.expertzlab.yieldmanagement.models.PropertyManager;
 
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -36,8 +33,7 @@ public class OwnerRandomizer {
             lastId = res.getLong(1);
         }
     }
-    public List getRandomizedList(List list) throws SQLException {
-        List l1 = new ArrayList();
+    public void writeRandomizedList(List list) throws SQLException {
         Random r = new Random();
         pmDataReader.getAllPropertyManagerList();
         recordcount = (int)lastId +1;
@@ -53,24 +49,35 @@ public class OwnerRandomizer {
                Owner p1 = (Owner) list.get(pos1);
                pos2 = RandomNumGenerator.getRandomPosition(list.size(),r);
                Owner p2 = (Owner) list.get(pos2);
-               Owner p3 = new Owner();
-               p3.setId(recordcount);
-               p3.setName(p1.getName() + " " + p2.getName() + r.nextInt(((int) (recordcount + lastId))));
-               p3.setAddress(pos1 > pos2 ? p1.getAddress() : p2.getAddress());
+               Owner own = new Owner();
+               own.setId(recordcount);
+               own.setName(p1.getName() + " " + p2.getName() + r.nextInt(((int) (recordcount + lastId))));
+               own.setAddress(pos1 > pos2 ? p1.getAddress() : p2.getAddress());
                int rndNumer = r.nextInt(99999);
-               p3.setAddress(p3.getAddress() + " HN#" + rndNumer);
-               p3.setContact(pos1 > pos2 ? p1.getContact() : p2.getContact());
-               p3.setManagerId(pm.getManagerId());
-               String contact = p3.getContact();
-               if (p3.getContact() != null) {
-                   p3.setContact(contact.substring(0, contact.length() - ("" + rndNumer).length() - 1) + rndNumer);
+               own.setAddress(own.getAddress() + " HN#" + rndNumer);
+               own.setContact(pos1 > pos2 ? p1.getContact() : p2.getContact());
+               own.setManagerId(pm.getManagerId());
+               String contact = own.getContact();
+               if (own.getContact() != null) {
+                   own.setContact(contact.substring(0, contact.length() - ("" + rndNumer).length() - 1) + rndNumer);
                }
-               l1.add(p3);
+               saveOwner(own);
                recordcount++;
            }
 
        }
+    }
 
-        return l1;
+    private void saveOwner(Owner own) throws SQLException {
+        System.out.println("Owner -"+own);
+        PreparedStatement statement = con.prepareStatement("insert into owner(ownid,name,contact,address,pmid) values(?,?,?,?,?) ");
+        statement.setLong(1, own.getId());
+        statement.setString(2, own.getName());
+        statement.setString(3, own.getContact());
+        statement.setString(4, own.getAddress());
+        statement.setString(5, own.getManagerId());
+        statement.execute();
+        statement.close();
+        System.out.println("Executed successfully");
     }
 }

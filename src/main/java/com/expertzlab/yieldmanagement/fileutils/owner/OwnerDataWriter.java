@@ -27,24 +27,10 @@ public class OwnerDataWriter{
 
         try {
             OwnerRandomizer ar = new OwnerRandomizer(con);
-            list = ar.getRandomizedList(list);
-            for(Object own :list) {
-                System.out.println("Owner -"+own);
-                System.out.println("In new thread");
-                PreparedStatement statement = con.prepareStatement("insert into owner(ownid,name,contact,address,pmid) values(?,?,?,?,?) ");
-                statement.setLong(1,((Owner)own).getId());
-                statement.setString(2,((Owner)own).getName());
-                statement.setString(3,((Owner)own).getContact());
-                statement.setString(4,((Owner)own).getAddress());
-                statement.setString(5,((Owner)own).getManagerId());
-                statement.execute();
-                System.out.println("Executed successfully");
-            }
+            ar.writeRandomizedList(list);
 
-            list.clear();;
-            list = null;
         } catch (SQLException e) {
-            e.printStackTrace();
+            throw new RuntimeException("Owner Write failed",e);
         }
     }
 }

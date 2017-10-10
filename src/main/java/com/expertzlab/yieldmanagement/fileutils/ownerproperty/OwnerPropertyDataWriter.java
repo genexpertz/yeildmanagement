@@ -43,6 +43,7 @@ public class OwnerPropertyDataWriter{
                     statement.setString(3, ((OwnerProperty) op).getRegion());
                     statement.setLong(4, ((OwnerProperty) op).getOwnerId());
                     statement.execute();
+                    statement.close();
                     System.out.println("Executed successfully");
                 }
                 list.clear();

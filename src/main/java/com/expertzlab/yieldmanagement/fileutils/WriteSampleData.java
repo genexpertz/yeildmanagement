@@ -42,16 +42,17 @@ public class WriteSampleData {
             if (CompatencyProperty.equals(entry.getKey())) {
                 CompatencyPropertyDataWriter adw = new CompatencyPropertyDataWriter(con, entry.getValue());
                 adw.run();
-            } else if (Owner.equals(entry.getKey())) {
-                OwnerDataWriter pgmdw = new OwnerDataWriter(con, entry.getValue());
-                pgmdw.run();
             }else if (OwnerProperty.equals(entry.getKey())) {
                 OwnerPropertyDataWriter prodw = new OwnerPropertyDataWriter(con, entry.getValue());
                 prodw.run();
             }
-            else if (PropertyManager.equals(entry.getKey())){
+            else
+            if (PropertyManager.equals(entry.getKey())){
                 PropertyManagerDataWriter pmdw = new PropertyManagerDataWriter(con,entry.getValue());
                 pmdw.run();
+            } else if (Owner.equals(entry.getKey())) {
+                OwnerDataWriter pgmdw = new OwnerDataWriter(con, entry.getValue());
+                pgmdw.run();
             }
             }
         }

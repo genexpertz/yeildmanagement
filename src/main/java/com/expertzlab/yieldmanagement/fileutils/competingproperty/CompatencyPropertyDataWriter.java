@@ -40,6 +40,7 @@ public class CompatencyPropertyDataWriter{
 
                 //statement.setLong(3,((Agent)agt).getProjectId());
                 statement.execute();
+                statement.close();
                 System.out.println("Executed successfully");
             }
             list.clear();
