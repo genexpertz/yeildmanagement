@@ -5,9 +5,9 @@ package com.expertzlab.yieldmanagement.fileutils;
  */
 public class CountConfig {
 
-    public static final int PROPERTY_MANAGER_COUNT = 10;
-    public static final int OWNER_COUNT = 10;
-    public static final int OWNER_PROPERTY_COUNT = 5;
-    public static final int COMPETING_PROPERTY_COUNT = 5;
+    public static final int PROPERTY_MANAGER_COUNT = 100000;
+    public static final int OWNER_COUNT = 500;
+    public static final int OWNER_PROPERTY_COUNT = 100;
+    public static final int COMPETING_PROPERTY_COUNT = 50;
 
 }
