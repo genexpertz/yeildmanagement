@@ -76,8 +76,7 @@ public class LoadSampleData {
                     break;
                 }
                 case "com.expertzlab.yieldmanagement.models.OwnerProperty":{
-                    ds = new OwnerPropertyDataSetter(clazz, harray, rArray) {
-                    };
+                    ds = new OwnerPropertyDataSetter(clazz, harray, rArray);
                     op = (OwnerProperty) ds.run();
                     op.setPropertyId();
                     arrayList.add(op);
