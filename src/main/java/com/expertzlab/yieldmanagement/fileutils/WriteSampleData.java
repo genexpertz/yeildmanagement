@@ -38,11 +38,13 @@ public class WriteSampleData {
     }
 
     void writeData() {
+
         for (HashMap.Entry<Class, List> entry : map.entrySet()) {
             if (CompatencyProperty.equals(entry.getKey())) {
                 CompatencyPropertyDataWriter adw = new CompatencyPropertyDataWriter(con, entry.getValue());
                 adw.run();
             }else if (OwnerProperty.equals(entry.getKey())) {
+                System.out.println("Stariting OP write");
                 OwnerPropertyDataWriter prodw = new OwnerPropertyDataWriter(con, entry.getValue());
                 prodw.run();
             }

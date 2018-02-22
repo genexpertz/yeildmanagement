@@ -66,6 +66,7 @@ public class OwnerRandomizer {
            }
 
        }
+       pmDataReader.close();
     }
 
     private void saveOwner(Owner own) throws SQLException {

@@ -6,10 +6,7 @@ import com.expertzlab.yieldmanagement.genutils.RandomNumGenerator;
 import com.expertzlab.yieldmanagement.models.CompetantProperty;
 import com.expertzlab.yieldmanagement.models.OwnerProperty;
 
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -38,15 +35,14 @@ public class CompatencyPropertyRandomizer {
         }
     }
 
-    public List getRandomizedList(List list) throws SQLException {
+    public void generateCompetancyProperties(List list) throws SQLException {
 
         recordcount = (int)lastId +1;
-        List l1 = new ArrayList(recordcount);
         Random r = new Random();
         OwnerProperty ownerProperty = null;
         int ownPropCount = opDataReader.getAllOwnerPropertyCount();
         for(int opc=1; opc <= ownPropCount; opc++ ) {
-            ownerProperty = opDataReader.get(opc);
+            //ownerProperty = opDataReader.get(opc);
 
             int cpCount = r.nextInt(maxCompatencyPropertyCount);
             if(cpCount <1) cpCount = 1;
@@ -62,15 +58,29 @@ public class CompatencyPropertyRandomizer {
                 CompetantProperty p3 = new CompetantProperty();
                 p3.setCpid(recordcount);
                 p3.setName(p1.getName() + " " + p2.getName() + r.nextInt(((int) (recordcount + lastId))));
-                p3.setRegion(ownerProperty.getRegion());
-                p3.setOpid(ownerProperty.getPropertyId());
+                p3.setRegion("Same as OP");
+                p3.setOpid(opc);
 
-                l1.add(p3);
+                saveCompetancyProperty(p3);
                 recordcount++;
             }
         }
-        return l1;
 
+    }
+
+    private void saveCompetancyProperty(CompetantProperty p3) throws SQLException {
+        System.out.println("CompetantProperty-"+p3);
+        System.out.println("In new thread");
+        PreparedStatement statement = con.prepareStatement("insert into compatency_property_list(cpid,opid,region,name) values(?,?,?,?) " );
+        statement.setLong(1,p3.getCpid());
+        statement.setLong(2,p3.getOpid());
+        statement.setString(3,p3.getRegion());
+        statement.setString(4,p3.getName());
+
+        //statement.setLong(3,((Agent)agt).getProjectId());
+        statement.execute();
+        statement.close();
+        System.out.println("Executed successfully");
     }
 }
 

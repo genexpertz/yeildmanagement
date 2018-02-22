@@ -13,7 +13,7 @@ public class PropertyManagerDataReader {
 
     Connection con;
     protected ResultSet res;
-
+    PreparedStatement statement;
     public boolean hasNext() {
 
         try {
@@ -29,12 +29,13 @@ public class PropertyManagerDataReader {
         this.con = con;
     }
     public void getAllPropertyManagerList() throws SQLException {
-        PreparedStatement statement = con.prepareStatement("select * from property_manager");
+        statement = con.prepareStatement("select * from property_manager");
         res = statement.executeQuery();
     }
 
     public void close() throws SQLException{
         res.close();
+        statement.close();
         System.out.println("Executed successfully");
     }
 

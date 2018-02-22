@@ -7,6 +7,7 @@ import com.expertzlab.yieldmanagement.models.*;
 
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.List;
 
 /**
  * Created by gireeshbabu on 26/09/17.
@@ -37,30 +38,32 @@ public class AvailabilityService {
 
     public void generateAvailability() throws SQLException {
 
+        List<YMDate> dateList = dtDr.getAllDateList();
+        int dateListLen = dateList.size();
         //Getting owners
         Owner owner = null;
         oDr.getAllOwnerCount();
         int owcount = oDr.getAllOwnerCount();
         for(int oc=1; oc <= owcount; oc++ ) {
-            owner = oDr.get(oc);
+            //owner = oDr.get(oc);
 
             //Get owner Property
             OwnerProperty ownerProperty = null;
-            int ownPropCountMax = opDr.getAllOwnerPropertyCount(owner.getId());
-            int ownPropCountMin = opDr.getAllOwnerPropertyStartCount(owner.getId());
+            int ownPropCountMax = opDr.getAllOwnerPropertyCount(oc);
+            int ownPropCountMin = opDr.getAllOwnerPropertyStartCount(oc);
             for(int opc=ownPropCountMin; opc <= ownPropCountMax; opc++ ) {
-                ownerProperty = opDr.get(oc,opc);
+                //ownerProperty = opDr.get(oc,opc);
 
                 //Get Dates
-                dtDr.getAllDateList();
+
                 Availability avail = new Availability();
-                while (dtDr.hasNext()) {
+                for (int i=0; i< dateListLen; i++) {
 
                     //Setting Owner P Availability
-                    YMDate dt = dtDr.get();
+                    YMDate dt = dateList.get(i);
 
-                    avail.setOid(owner.getId());
-                    avail.setOpid(ownerProperty.getPropertyId());
+                    avail.setOid(oc);
+                    avail.setOpid(opc);
                     avail.setDid(dt.getId());
                     avail.setCpid(0);
                     String bookStatus = availRand.isBooked();
@@ -73,12 +76,12 @@ public class AvailabilityService {
                     int compPropCountStart = cpDr.getAllCompatencyPropertyStartCount(opc);
                     CompetantProperty ownercp = null;
                     for(int cpc = compPropCountStart; cpc <=comPropCount; cpc++ ){
-                        ownercp = cpDr.get(cpc);
+                        //ownercp = cpDr.get(cpc);
 
                         //Setting Owner P Availability
-                        avail.setOpid(ownerProperty.getPropertyId());
-                        avail.setOid(owner.getId());
-                        avail.setCpid(ownercp.getCpid());
+                        avail.setOpid(opc);
+                        avail.setOid(oc);
+                        avail.setCpid(cpc);
                         avail.setDid(dt.getId());
                         String bookedflag = availRand.isBooked();
                         avail.setStatus(bookedflag);

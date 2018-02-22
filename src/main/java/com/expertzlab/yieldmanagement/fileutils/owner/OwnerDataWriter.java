@@ -32,5 +32,6 @@ public class OwnerDataWriter{
         } catch (SQLException e) {
             throw new RuntimeException("Owner Write failed",e);
         }
+        System.out.println("Owner write finished");
     }
 }

@@ -7,6 +7,7 @@ import com.expertzlab.yieldmanagement.models.*;
 
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.List;
 
 /**
  * Created by expertzlab on 9/6/17.
@@ -35,32 +36,30 @@ public class PriceService {
 
     public void generatePrices() throws SQLException {
 
+        //Get Dates
+        List<YMDate> dateList = dtDr.getAllDateList();
+        int dateListLen = dateList.size();
         //Getting owners
         Owner owner = null;
         int owcount = oDr.getAllOwnerCount();
         for(int oc=1; oc <= owcount; oc++ ) {
-            owner = oDr.get(oc);
+            //owner = oDr.get(oc);
 
             //Get owner Property
             OwnerProperty ownerProperty = null;
-            int ownPropCount = opDr.getAllOwnerPropertyCount(owner.getId());
-            int ownPropSCount = opDr.getAllOwnerPropertyStartCount(owner.getId());
-            for(int opc=1; opc <= ownPropCount; opc++ ) {
-                ownerProperty = opDr.get(oc,opc);
+            int ownPropCount = opDr.getAllOwnerPropertyCount(oc);
+            int ownPropSCount = opDr.getAllOwnerPropertyStartCount(oc);
+            for(int opc=ownPropSCount; opc <= ownPropCount; opc++ ) {
+                //ownerProperty = opDr.get(oc,opc);
 
-                if(ownerProperty == null){
-                    continue;
-                }
 
-                //Get Dates
-                dtDr.getAllDateList();
                 Price price = new Price();
-                while (dtDr.hasNext()) {
+                for (int i=0; i < dateListLen; i++) {
 
                     //Setting Owner P price
-                    YMDate dt = dtDr.get();
-                    price.setOid(owner.getId());
-                    price.setOpid(ownerProperty.getPropertyId());
+                    YMDate dt = dateList.get(i);
+                    price.setOid(oc);
+                    price.setOpid(opc);
                     price.setDid(dt.getId());
                     price.setCpid(0);
                     int ownerPrice = priceRand.getOwnerPrice();
@@ -70,14 +69,14 @@ public class PriceService {
                     //Get competing Property
                     int comPropCount = cpDr.getAllCompatencyPropertyCount(opc);
                     int comPropSCount = cpDr.getAllCompatencyPropertyStartCount(opc);
-                    CompetantProperty ownercp = null;
+                    //CompetantProperty ownercp = null;
                     for(int cpc = comPropSCount; cpc <=comPropCount; cpc++ ){
-                        ownercp = cpDr.get(cpc);
+                        //ownercp = cpDr.get(cpc);
 
                         //Setting Owner P price
-                        price.setOid(owner.getId());
-                        price.setOpid(ownerProperty.getPropertyId());
-                        price.setCpid(ownercp.getCpid());
+                        price.setOid(oc);
+                        price.setOpid(opc);
+                        price.setCpid(cpc);
                         price.setDid(dt.getId());
                         int comPropPrice = priceRand.getCompPropPrice(ownerPrice);
                         price.setPrice(Float.valueOf(comPropPrice));

@@ -7,12 +7,16 @@ import com.expertzlab.yieldmanagement.models.Price;
 import com.expertzlab.yieldmanagement.models.YMDate;
 
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by expertzlab on 9/25/17.
  */
 public class DateDataReader {
 
+    String[] hArray = prepareDateHeaderArray();
+    PreparedStatement statement;
 
     Connection con;
     protected ResultSet res;
@@ -31,21 +35,29 @@ public class DateDataReader {
 
         this.con = con;
     }
-    public void getAllDateList() throws SQLException {
-        PreparedStatement statement = con.prepareStatement("select * from dates");
+    public List getAllDateList() throws SQLException {
+
+        List<YMDate> dateList = new ArrayList<>();
+
+        statement = con.prepareStatement("select * from dates");
         res = statement.executeQuery();
+        while(res.next()){
+            dateList.add(get());
+        }
+        return dateList;
+
     }
 
     public void close() throws SQLException{
         res.close();
+        statement.close();
         System.out.println("Executed successfully");
+
     }
 
     public YMDate get() throws SQLException {
 
-        String[] hArray = prepareDateHeaderArray();
         String[] rArray = new String[4];
-
         dateRecordArray(rArray,res);
         DateDataSetter dds = new DateDataSetter(YMDate.class,hArray,rArray);
         YMDate date = dds.run();
